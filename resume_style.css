@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#container1 {
+    width: 780px;
+    height: 1120px;
+    border: 0.4px solid black;
+    margin: 0 auto;
+}
+#container1 h1,#container2 h1 {
+    text-align: center;
+    margin-top: 5%;
+}
+
+.personal_data1 {
+    width: 98%;
+    height: 40%;
+    margin: 0 auto;
+    margin-top: 5%;
+    display: flex;
+    padding: 1%;
+}
+
+.photo {
+    width: 45%;
+    height: 100%;
+}
+.photo div {
+    width: 90%;
+    height: 90%;
+    margin: 5% auto;
+}
+.myinfo1 {
+    width: 53%;
+    height: 100%;
+    margin-left: 2%;
+    flex-direction: column;
+    padding-top: 1.5%;
+}
+.myinfo1 div {
+    height: 13.9%;
+}
+.myinfo1 p {
+    font-size: 20px;
+    font-weight: bolder;
+}
+.git p {
+    font-size: 1.1em;
+}
+.personal_data2 {
+    margin: 0 auto;
+    margin-top: 0.5%;
+    width: 98%;
+    height: 44%;
+    padding: 1%;
+}
+.under {
+    border-bottom: 0.1px solid black;
+    padding-top: 5px;
+    padding-bottom: 0;
+}
+.myinfo2 {
+    width: 98%;
+    margin-left: 2%;
+}
+.myinfo2 div h4{
+    margin-bottom: 5px;
+    display: flex;
+}
+.service h4 {
+    width: 49%;
+}
+.service h4:last-child {
+    margin-left: 4%;
+}
+.flex {
+    display: flex;
+    margin-bottom: 2%;
+}
+.flex p {
+    width: 50%;
+    font-size: 20px;
+    font-weight: bolder;
+}
+.flex p:first-child {
+    font-size: 18px;
+    margin-bottom: 2px;
+    margin-top: 3px;
+}
+.flex p:last-child {
+    margin-left: 30px;
+}
+.signature {
+    width: 98%;
+    margin-top: 1%;
+    text-align: right;
+}
+
+/* 보유기술 */
+#container2 {
+    width: 780px;
+    height: 1115px;
+    margin: 20px auto;
+    padding: 10px 30px;
+    border: 0.4px solid black;
+    margin: 0 auto;
+}
+.ability {
+    width: 100%;
+    height: 86%;
+    margin: 5% 0;
+    border-collapse: collapse;
+    }
+.ability tr:first-child {
+    height: 40px;
+}
+.ability tr {
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    }
+.ability tr th {
+    background-color: #dbc6c6;
+    }
+.ability tr th:first-child {
+    border-right: 2px solid black;
+    }
+.ability tr th:nth-child(2) {
+    border-right: 2px solid black;
+    }
+.ability td {
+    border-left: 2px solid black;
+    height: 70px;
+    text-align: justify;
+    }
+.footer {
+    padding-left: 10px;
+}
+.ability tr td:not(.footer) {
+    text-align: center;
+    font-weight: bolder;
+    }

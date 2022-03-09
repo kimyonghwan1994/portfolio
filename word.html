@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<title> word.html </title>
+		<link rel="stylesheet" href="js/jquery-ui.css">
+		<script src="js/jquery.js"></script>
+		<script src="js/jquery-ui.js"></script>
+		<script>
+			window.onload = function() {
+			
+				// 오늘 날짜
+				var today = new Date();
+				var year = today.getFullYear();
+				var month = today.getMonth() + 1;
+				var days = today.getDate();
+			
+				console.log(year, month, days)
+			
+				$(".n_date").text( year + "/" + month + "/" + days);
+					
+				// 현재 시간
+				setClock();
+				var clock = setInterval(function() {
+					setClock();
+					}, 1000);	
+				function setClock() {
+					var date = new Date();
+					var minutes = date.getMinutes();
+					
+					var dateText = date.getHours() + ':' + String(minutes).padStart( 2 , "0");
+					document.querySelector(".n_time").innerHTML = dateText;
+				};
+				
+				// nav 이벤트 추가
+				$(function(){
+					$("nav a").eq(0).mouseover(function(){
+						$(".t-box1").css("background-color","#EAEAEA");
+						$(".t-box1").css("font-weight","bolder");
+						$(".c-box1").css("opacity","1");
+						});
+					$("nav a").eq(0).mouseout(function(){
+						$(".t-box1").css("background-color","white");
+						$(".t-box1").css("font-weight","normal");
+						$(".c-box1").css("opacity","0.7");
+						});
+					$("nav a").eq(1).mouseover(function(){
+						$(".t-box2 p").css("font-size","1em");
+						$(".t-box2 p").css("margin-top","20px");
+						$(".t-box2 p").text("맨 위로 올라가기");
+						});
+					$("nav a").eq(1).mouseout(function(){
+						$(".t-box2 p").css("font-size","1.2em");
+						$(".t-box2 p").text("법률용어 알기");
+						});
+					$("nav a").eq(2).mouseover(function(){
+						$(".t-box3").css("background-color","#EAEAEA");
+						$(".t-box3").css("font-weight","bolder");
+						$(".c-box3").css("opacity","1");
+						});
+					$("nav a").eq(2).mouseout(function(){
+						$(".t-box3").css("background-color","white");
+						$(".t-box3").css("font-weight","normal");
+						$(".c-box3").css("opacity","0.7");
+						});
+					$("nav a").eq(3).mouseover(function(){
+						$(".t-box4").css("background-color","#EAEAEA");
+						$(".t-box4").css("font-weight","bolder");
+						$(".c-box4").css("opacity","1");
+						});
+					$("nav a").eq(3).mouseout(function(){
+						$(".t-box4").css("background-color","white");
+						$(".t-box4").css("font-weight","normal");
+						$(".c-box4").css("opacity","0.7");
+						});
+						
+					// 분류 선택하면 나타나는 이벤트 추가하기 ( background-color/border )
+					$(".num").eq(0).mouseover(function(){
+						$(".num1").css("background-color","#EAEAEA");
+						$(".num1 a").css("border-bottom","3px solid black");
+						});
+					$(".num").eq(0).mouseout(function(){
+						$(".num1").css("background-color","#FFFFF6");
+						$(".num1 a").css("border-bottom","0px solid black");
+						});					
+					$(".num").eq(1).mouseover(function(){
+						$(".num2").css("background-color","#EAEAEA");
+						$(".num2 a").css("border-bottom","3px solid black");
+						});
+					$(".num").eq(1).mouseout(function(){
+						$(".num2").css("background-color","#FFFFF6");
+						$(".num2 a").css("border-bottom","0px solid black");
+						});				
+					$(".num").eq(2).mouseover(function(){
+						$(".num3").css("background-color","#EAEAEA");
+						$(".num3 a").css("border-bottom","3px solid black");
+						});
+					$(".num").eq(2).mouseout(function(){
+						$(".num3").css("background-color","#FFFFF6");
+						$(".num3 a").css("border-bottom","0px solid black");
+						});					
+					$(".num").eq(3).mouseover(function(){
+						$(".num4").css("background-color","#EAEAEA");
+						$(".num4 a").css("border-bottom","3px solid black");
+						});
+					$(".num").eq(3).mouseout(function(){
+						$(".num4").css("background-color","#FFFFF6");
+						$(".num4 a").css("border-bottom","0px solid black");
+						});
+						
+					// 분류를 클릭했을 경우 나타나는 이벤트 추가하기 ( 용어 위치 > 텍스트 변경 )
+					$(".num").eq(0).click(function(){
+						$(".place").text("형벌의 종류");
+						});
+					$(".num").eq(1).click(function(){
+						$(".place").text("형법");
+						});
+					$(".num").eq(2).click(function(){
+						$(".place").text("민법");
+						});
+					$(".num").eq(3).click(function(){
+						$(".place").text("공통");
+						});
+						
+					// 하단 번호를 눌렀을 때 변경되는 페이지 ( 형벌의 종류 1,2 )
+					$(".num1-page1").click(function(){
+						$("#num1").css("display","block");
+						$("#num1-1").css("display","none");
+						});	
+					$(".num1-page2").click(function(){
+						$("#num1").css("display","none");
+						$("#num1-1").css("display","block");
+						});	
+						
+					// 하단 번호를 마우스 오버, 아웃했을 때 나타나는 이벤트 ( background-color/border )
+					$(".num1-page1").mouseover(function(){
+						$(".num1-page1").css("background-color","#EAEAEA");
+						$(".num1-page1").css("border","1px solid black");
+						});
+					$(".num1-page1").mouseout(function(){
+						$(".num1-page1").css("background-color","#FFFFE4");
+						$(".num1-page1").css("border","0px solid black");
+						});
+					$(".num1-page2").mouseover(function(){
+						$(".num1-page2").css("background-color","#EAEAEA");
+						$(".num1-page2").css("border","1px solid black");
+						});
+					$(".num1-page2").mouseout(function(){
+						$(".num1-page2").css("background-color","#FFFFE4");
+						$(".num1-page2").css("border","0px solid black");
+						});
+					$(".num1-page3").mouseover(function(){
+						$(".num1-page3").css("background-color","#EAEAEA");
+						$(".num1-page3").css("border","1px solid black");
+						});
+					$(".num1-page3").mouseout(function(){
+						$(".num1-page3").css("background-color","#FFFFE4");
+						$(".num1-page3").css("border","0px solid black");
+						});
+						
+					/* 아코디언 
+					$( "#num1" ).accordion({
+						heightStyle: "content"
+						collapsible: true 
+						});
+					*/
+				});
+				
+			};
+		</script>
+		
+		<style>
+/* ▼ 전체 설정 초기화 */
+			* {
+				box-sizing: border-box;
+				}
+			html,body {
+				width: 100%;
+				height:	100%;
+				margin: 0;
+				padding: 0;
+				background : linear-gradient( to top,#FFFFDB,#FFFFE4,#FFFFF6,#FFFFF6,white);
+				text-align: justify;
+				overflow: hidden;
+				}
+				
+/* ▼ 날짜, 시간 박스 */				
+			#time_box {
+				width: 180px;
+				height: 50px;
+				margin: 0;
+				position: absolute;
+				position: fixed;
+				left: 80%;
+				display: flex;
+				margin: 20px auto 0 auto;
+				}
+			#time_box p {
+				font-size: 1.35em;
+				}
+			#time_box p:nth-child(2) {
+				margin-left: 15px;
+				}
+
+/* ▼ nav */
+			nav {
+				width: 200px;
+				margin: 0;
+				position: absolute;
+				top: 10%;
+				left: 80%;
+				position: fixed;
+				}
+			.page1, .page2, .page3, .page4 {
+				width: 180px;
+				height: 50px;
+				display: flex;
+				margin-bottom: 5px;
+				color: black;
+				}
+			/*페이지에 맞춰 바꿔야 할 속성*/
+			.page2 {
+				background-color: #EAEAEA;
+				font-weight: bolder;
+				opacity: 1;
+				}
+			.t-box1, .t-box3, .t-box4 {
+				width: 80%;
+				height: 100%;
+				background: white;
+				}
+			/*페이지에 맞춰 바꿔야 할 속성*/
+			 .t-box2 {
+				width: 80%;
+				height: 100%;
+				}
+			.t-box1 p, .t-box2 p, .t-box3 p {
+				position: relative;
+				top: -7px;
+				font-size: 1.2em;
+				}
+			.t-box4 p {
+				position: relative;
+				top: -2px;
+				font-size: 1em;
+				}
+			.c-box1, .c-box2, .c-box3, .c-box4 {
+				width: 20%;
+				height: 100%;
+				}
+			.c-box1 {
+				background-color: #484848;
+				opacity: 0.7;
+				}
+			.c-box2 {
+				background-color: #FF4848;
+				opacity: 0.7;
+				}
+			.c-box3 {
+				background-color: #4948FF;
+				opacity: 0.7;
+				}
+			.c-box4 {
+				background-color: #65FF5E;
+				opacity: 0.7;
+				}
+				
+/* 미디어 쿼리를 이용하여 1200px 기준 맞추기 */
+
+			@media screen and (max-width : 2000px) {
+			
+/* ▼ #container 공통적으로 해당하는 부분 */
+			#container {
+				width: 60%;
+				height: 100%;
+				margin: 0 auto;
+				border-left: 0.5px dotted black;
+				border-right: 0.5px dotted black;
+				padding: 0px 10px;
+				}
+			a:link, a:visited {
+				text-decoration: none;
+				color: black;
+				}
+			h1 {
+				width: 400px;
+				font-size: 1.3em;
+				margin-top: 1px;
+				}
+			.bottom {
+				border-bottom: 1px dotted red;
+				padding-bottom: 2px;
+				}
+			.small {
+				font-size: 0.9em;
+				}
+			ol li, ul li {
+				margin: 7px 0;
+				font-size: 0.9em;
+				}
+			ol, ul {
+				width: 90%;
+				border: 1px solid black;
+				margin: 0 auto;
+				padding-right: 5px;
+				}		
+			h2 {
+				margin-bottom: 0;
+				}
+			b {
+				color: red;
+				}
+				
+/* section */	
+			.title hr {
+				width: 100px;
+				margin: 0;
+				border: 2px solid gray;
+				position: relative;
+				}
+			.title {
+				margin-bottom: 30px;
+				}
+			section>hr {
+				width: 100%;
+				border: 2px solid gray;
+				margin-bottom: 20px;
+				}
+			.form-box1 {
+				width: 400px;
+				margin: 0 auto;
+				font-weight: bolder;
+				margin-bottom: 30px;
+				}
+			#find {
+				width: 250px;
+				height: 30px;
+				text-align: center;
+				border: 1px solid gray;
+				border-radius: 20px;
+				}
+				
+			.divide {
+				width: 100%;
+				height: 40px;
+				display: flex;
+				border: 1px solid black;
+				margin-bottom: 30px;
+				}
+			.divide div {
+				width: 100%;
+				background-color: #FFFFF6;
+				text-align: center;
+				padding-top: 5px;
+				}
+			.num {
+				font-weight: bolder;
+				font-size: 1.3em;
+				}
+				
+/* section 법률용어 정리 */
+			#num1 {
+				height: 640px;
+				}
+			#num1 h2,#num1-1 h2 {
+				width: 150px;
+				height: 30px;
+				/*border-top-left-radius: 10px;
+				border-top-right-radius: 10px;*/
+				text-align: center;
+				border-top: 2px solid black;
+				border-right: 2px solid black;
+				border-bottom: 1px solid black;
+				border-left: 2px solid black;
+				}
+			#num1 div p {
+				width: 100%;
+				height: 140px;
+				border: 1px solid black;
+				margin-top: 0;
+				padding: 10px;
+				text-align: justify;
+				/*height: 0;
+				display: none;*/
+				background-color: #F3F3F3;
+				font-size: 0.9em;
+				}
+			#num1-1 {
+				width: 100%;
+				height: 640px;
+				display: none;
+				}
+			#num1-1 div p {
+				width: 100%;
+				height: 260px;
+				border: 1px solid black;
+				margin-top: 0;
+				padding: 10px;
+				text-align: justify;
+				/*height: 0;
+				display: none;*/
+				background-color: #F3F3F3;
+				font-size: 0.9em;
+				}
+			
+			.shorts {
+				border-bottom: 1px solid red;
+				background-color: #FFFF6C;
+				line-height: 27px;
+				font-weight: bolder;
+				}
+			.place {
+				font-size: 0.8em;
+				}
+			.type-text1 {
+				position: absolute;
+				top: 48%;
+				left: 15%;
+				font-size: 2em;
+				color: blue;
+				}
+			.type1 {
+				width: 15px;
+				height: 560px;
+				border-top: 3px solid black;
+				border-bottom: 3px solid black;
+				border-left: 3px solid black;
+				position: absolute;
+				top: 28%;
+				left: 19%;
+				}
+			.type-text2 {
+				position: absolute;
+				top: 48%;
+				left: 15%;
+				font-size: 2em;
+				color: blue;
+				}
+			.type2 {
+				width: 15px;
+				height: 610px;
+				border-top: 3px solid black;
+				border-bottom: 3px solid black;
+				border-left: 3px solid black;
+				position: absolute;
+				/*top: -1.5%;
+				left: -4%;*/
+				top: 28%;
+				left: 19%;
+				}
+			.n-page {
+				width: 90px;
+				height: 30px;
+				position: absolute;
+				margin: 0 auto;
+				display: flex;
+				top: 95%;
+				left: 45%;
+				}
+			.n-page div {
+				width: 30px;
+				height: 30px;
+				border-radius: 50%;
+				font-size: 1.2em;
+				padding-left: 9px;
+				font-weight: bolder;
+				}
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div id="next-page">
+				<div class="left-page">
+				</div>
+				<div class="right-page">
+				</div>
+			</div>
+		<header>
+			<div id="time_box">
+				<p class="n_date"></p>
+				<p class="n_time"></p>
+			</div>
+		</header>
+		<nav>
+			<a href="project3.html" id="page-move">
+				<div class="page1" id="nav1">
+					<div class="t-box1">
+						<p>홈으로 돌아가기</p>
+					</div>
+					<div class="c-box1"></div>
+				</div>
+			</a>
+			
+			<a href="#">
+				<div class="page2" id="nav2">
+					<div class="t-box2">
+						<p>법률용어 알기</p>
+					</div>
+					<div class="c-box2"></div>
+				</div>
+			</a>
+			
+			<a href="trial.html">
+				<div class="page3" id="nav3">
+					<div class="t-box3">
+						<p>재판 해보기</p>
+					</div>
+					<div class="c-box3"></div>
+				</div>
+			</a>
+			
+			<a href="jury.html">
+				<div class="page4" id="nav4">
+					<div class="t-box4">
+						<p>국민참여재판이란?</p>
+					</div>
+					<div class="c-box4"></div>
+				</div>
+			</a>
+		</nav>
+		<div id="container">
+			<section>
+				<div class="title">
+					<hr>
+					<h1>법률용어 알기!</h1>
+					<p>궁금하신 법률용어를 찾아볼 수 있어요.!</p>
+				</div>
+				<hr>
+				<div class="form-box1">
+					<form>
+						찾는 용어 :
+						<input type="text" name="word_find" placeholder="찾으시는 단어를 입력해주세요." id="find">
+						<br>
+						용어 위치 : <span class="place">형벌의 종류</span>
+					</form>
+				</div>
+				
+				<div class="divide">
+					<div class="num1">
+						<a href="#" class="num">형벌의 종류</a>
+					</div>
+					<div class="num2">
+						<a href="#" class="num">형법</a>
+					</div>
+					<div class="num3">
+						<a href="#" class="num">민법</a>
+					</div>
+					<div class="num4">
+						<a href="#" class="num">공통</a>
+					</div>
+					<!-- <div class="num1">
+						<a href="#num1" class="num">ㄱ</a>
+					</div>
+					<div class="num2">
+						<a href="#" class="num">ㄴ</a>
+					</div>
+					<div class="num3">
+						<a href="#" class="num">ㄷ</a>
+					</div>
+					<div class="num4">
+						<a href="#" class="num">ㄹ</a>
+					</div>
+					<div class="num5">
+						<a href="#" class="num">ㅁ</a>
+					</div>
+					<div class="num6">
+						<a href="#" class="num">ㅂ</a>
+					</div>
+					<div class="num7">
+						<a href="#" class="num">ㅅ</a>
+					</div>
+					<div class="num8">
+						<a href="#" class="num">ㅇ</a>
+					</div>
+					<div class="num9">
+						<a href="#" class="num">ㅈ</a>
+					</div>
+					<div class="num10">
+						<a href="#" class="num">ㅊ</a>
+					</div>
+					<div class="num11">
+						<a href="#" class="num">ㅋ</a>
+					</div>
+					<div class="num12">
+						<a href="#" class="num">ㅌ</a>
+					</div>
+					<div class="num13">
+						<a href="#" class="num">ㅍ</a>
+					</div>
+					<div class="num14">
+						<a href="#" class="num">ㅎ</a>
+					</div> -->
+				</div>
+<!-- 형벌의 종류 -->
+				<div id="num1">
+					<span class="type-text1">자<br>유<br>형</span>
+					<div class="type1">
+					</div>
+					<h2>사형</h2>
+					<div>
+						<p>
+							범죄인의 생명을 박탈하여 그 사람을 사회로부터 영구히 제거시키는 형벌을 말한다.<br><br>
+							<span class="shorts">우리나라는 1997년 12월 30일에 마지막 사형 집행 이후 사형을 집행하지 않아 <b>실질적 사형 폐지 국가</b>로 분류되고 있다.</span>
+						</p>
+					</div>
+					<h2>징역</h2>
+					<div>
+						<p>
+							수형자를 교도소 내에 구치(가두어 놓음)하여 노역에 종사하게 하는 형벌을 말한다.<br><br>
+							<span class="shorts">징역은 '무기'와 '유기'로 구별되며 생명이 다할 때까지 하는 징역을 <b>무기징역</b>,<br>
+							기한이 정해진 징역은 <b>유기징역 또는 징역</b>이라고 한다.</span>
+						</p>
+					</div>
+					<h2>금고</h2>
+					<div>
+						<p>
+							수형자를 교도서 내에 구치(가두어 놓음)하는 형벌을 말한다.<br><br>
+							<span class="shorts"><b>'징역'과의 차이는 노역의 유무</b>에 있다. 단, 신청에 의하여 노역을 시킬 수 있고 주로 '과실범' 및 '정치범'에게 주어지는 형벌이다.</span><br>
+							드라마 '악마판사'에서 판사가 기업인 A씨에 대해 '업무상 과실치상'의 댓가로 금고에 처함.
+						</p>
+					</div>
+				</div>
+				
+				<div id="num1-1">
+					<span class="type-text2">명<br>예<br>형</span>
+					<div class="type2"></div>
+					<h2>자격상실</h2>
+					<div>
+						<p>
+							사형, (무기)징역, (무기)금고의 판결을 받은 사람에게 일정한 자격을 갖지 못하게 하는 형벌을 말한다.<br><br>
+							<span class="shorts"><b>쉽게 사형, 무기징역, 무기금고의 이유로 사회와 격리되기 때문에 자격을 없는 것으로 한다고 생각할 수 있겠다.</b></span><br><br>
+							상실되는 자격은<br>
+							① 공무원이 되는 자격<br> ② 공법상의 선거권과 피선거권<br>③ 법률로 요건을 정한 공법상의 업무에 관한 자격(운전면허도 이에 해당)<br>④ 법인의 이사, 감사 또는 지배인 기타 법인의 업무에 관한 검사역이나 재산관리인이 되는 자격
+						</p>
+					</div>
+					<h2>자격정지</h2>
+					<div>
+						<p>
+							일정 기간 동안 일정한 자격의 전부 또는 일부가 정지되는 형벌을 말한다.<br><br>
+							<span class="shorts"><b>유기징역, 유기금고의 판결을 받은 자는 그형의 집행이 종료되거나 면제되는 때까지 자격이 정지된다.</b></span><br><br><br>
+							자격상실의<br>
+							① 공무원이 되는 자격<br> ② 공법상의 선거권과 피선거권<br>③ 법률로 요건을 정한 공법상의 업무에 관한 자격(운전면허도 이에 해당)<br>
+							이 해당된다.
+						</p>
+					</div>
+				</div>
+				<div class="n-page">
+					<div class="num1-page1">
+						<a href="#">1</a>
+					</div>
+					<div class="num1-page2">
+						<a href="#">2</a>
+					</div>
+					<div class="num1-page3">
+						<a href="#">3</a>
+					</div>
+				</div>
+				
+				<!-- <div id="num4">
+					<h2>각하</h2>
+					<div>
+						<p>
+							소 또는 상소(=상급법원에 재심을 요구하는 일)가 그 요건을 구비하지 못한 경우에 부적법한 것으로 하여 소송을 종료시키는 것을 말한다.<br><br>
+							<span class="shorts">예) 민사사건을 형사소송 했을 경우(형식적인 요건), 법원은 이를 <b>각하</b>할 수 있다.</span><br><br>
+							유의어 기각.
+						</p>
+					</div>
+					<h2>기각</h2>
+					<div>
+						<p>
+							형식적인 요건은 갖추었으나 법원에서 사건을 심리한 결과, 신청의 내용을 이유가 없다고 배척하는 것을 말한다.<br><br>
+							<span class="shorts">예) 연쇄살인범 A씨가 무기징역에 대해 항소심을 요청한 경우 법원은 이를 <b>기각</b>할 수 있다. (=무기징역을 당연한 것으로 봄)</span><br><br>
+							유의어 각하.
+						</p>
+					</div>
+				</div> -->
+			</section>
+			<footer>
+				
+			</footer>
+			
+		</div>
+	</body>
+</html>

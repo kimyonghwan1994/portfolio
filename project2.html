@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
+		<title>
+			group_C_start
+		</title>
+        <script src="main/js/jquery.js"></script>
+        <script>
+            function gohome() {
+                location.href="main/main.html";
+            }
+
+            setTimeout(function() {
+                gohome();
+            },2500);
+        </script>
+        <style>
+            * {
+                font-family: 'Noto Sans KR', sans-serif;
+                padding: 0px;
+                margin: 0px;
+                box-sizing: border-box;
+            }
+            /* 배경 시작 */
+            #container {
+                width: 1280px;
+                margin: auto;
+            }
+            /* 배경 끝 */
+            /* 헤더 시작 */
+            /* 헤더 끝 */
+            /* 섹션 시작 */
+            section {
+                width: 100%;
+            }
+            video {
+                width: 100%;
+            }
+            section p {
+                text-align: center;
+                font-size: 2em;
+                font-weight: bolder;
+                opacity: 0;
+                transition: all 1s;
+            }
+            /* 섹션 끝 */
+        </style>
+	</head>
+	<body>
+        <div id="container">
+            <section>
+                <video autoplay muted src="main/multi/logovid.mp4"></video>
+            </section>
+        </div>
+	</body>
+</html>

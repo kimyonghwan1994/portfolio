@@ -1,0 +1,612 @@
+<!doctype html>
+<html lang="ko">
+	<head>
+		<!-- noto sans 글자체 -->
+		<link rel="stylesheet" href="css/detalied.css" type="text/css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<title>
+			사계절 야영장
+		</title>
+		<script>
+
+// 코로나 안내문
+			var flag = true;
+			function view() {
+				if (flag) {
+					flag = false;
+					down();
+				}
+				else {
+					flag = true;
+					up();
+				}
+
+				function down() {
+					var down = document.querySelector(".arcbox1");
+					var downin = document.querySelector("#articlemenu1");
+					var change = document.querySelectorAll(".articlemenuimg")[0];
+					down.style.height = "165px";
+					downin.style.height = "165px";
+					change.style.transform = "rotateZ(180deg)";
+				}
+				function up() {
+					var up = document.querySelector(".arcbox1");
+					var upin = document.querySelector("#articlemenu1");
+					var change = document.querySelectorAll(".articlemenuimg")[0];
+					up.style.height = "50px";
+					upin.style.height = "50px";
+					change.style.transform = "rotateZ(0deg)";
+				}
+			}
+
+// 메뉴 클릭효과
+			window.onload = function() {
+				var li1 = document.querySelectorAll(".li1")[0];
+				var li2 = document.querySelectorAll(".li1")[1];
+				var li3 = document.querySelectorAll(".li1")[2];
+				var li4 = document.querySelectorAll(".li1")[3];
+				
+				var arc4 = document.querySelector("#arc4");
+				var arc5 = document.querySelector("#arc5");
+				var arc6 = document.querySelector("#arc6");
+				var arc7 = document.querySelector("#arc7");
+				
+				li1.addEventListener("click",display1);
+				li1.addEventListener("click",color1);
+				
+				li2.addEventListener("click",display2);
+				li2.addEventListener("click",color2);
+				
+				li3.addEventListener("click",display3);
+				li3.addEventListener("click",color3);
+
+			
+				li4.addEventListener("click",display4);
+				li4.addEventListener("click",color4);
+				
+				function color1() {
+					var i;
+					var a = document.querySelectorAll(".li1");
+
+					for ( i = 0 ; i <= a.length-1 ; i++ ) {
+						if ( i == 0 ) {
+							a[i].style.backgroundColor = "#666";
+							a[i].style.color = "white";
+							a[i].style.borderBottom = "none";
+						}
+						else {
+							a[i].style.backgroundColor = "white";
+							a[i].style.color = "black";
+							a[i].style.borderBottom = "3px solid black";
+						}
+					}
+				}
+
+				function color2() {
+					var i;
+					var a = document.querySelectorAll(".li1");
+
+					for ( i = 0 ; i <= a.length-1 ; i++ ) {
+						if ( i == 1 ) {
+							a[i].style.backgroundColor = "#666";
+							a[i].style.color = "white";
+							a[i].style.borderBottom = "none";
+						}
+						else {
+							a[i].style.backgroundColor = "white";
+							a[i].style.color = "black";
+							a[i].style.borderBottom = "3px solid black";
+						}
+					}
+				}
+
+				function color3() {
+					var i;
+					var a = document.querySelectorAll(".li1");
+
+					for ( i = 0 ; i <= a.length-1 ; i++ ) {
+						if ( i == 2 ) {
+							a[i].style.backgroundColor = "#666";
+							a[i].style.color = "white";
+							a[i].style.borderBottom = "none";
+						}
+						else {
+							a[i].style.backgroundColor = "white";
+							a[i].style.color = "black";
+							a[i].style.borderBottom = "3px solid black";
+						}
+					}
+				}
+
+				function color4() {
+					var i;
+					var a = document.querySelectorAll(".li1");
+
+					for ( i = 0 ; i <= a.length-1 ; i++ ) {
+						if ( i == 3 ) {
+							a[i].style.backgroundColor = "#666";
+							a[i].style.color = "white";
+							a[i].style.borderBottom = "none";
+						}
+						else {
+							a[i].style.backgroundColor = "white";
+							a[i].style.color = "black";
+							a[i].style.borderBottom = "3px solid black";
+						}
+					}
+				}
+				
+				function display1() {
+                  arc4.style.display = "block";
+				  
+				  arc5.style.display = "none";
+				  arc6.style.display = "none";
+				  arc7.style.display = "none";
+				};
+				
+				function display2() {
+                  arc5.style.display = "block";
+				  arc4.style.display = "none";
+				  arc6.style.display = "none";
+				  arc7.style.display = "none";
+				};
+				
+				function display3() {
+                  arc6.style.display = "block";
+				  
+				  arc4.style.display = "none";
+				  arc5.style.display = "none";
+				  arc7.style.display = "none";
+				};
+				
+				function display4() {
+                  arc7.style.display = "block";
+				  
+				  arc4.style.display = "none";
+				  arc5.style.display = "none";
+				  arc6.style.display = "none";
+				};
+				
+			};
+// 우측 고정 메뉴바
+	// 흰 위 화살표 색 on
+				function yellowhigh() {
+					document.querySelector("#high").src = "image/yellowhigh.png";
+				}
+	// 노랑 위 화살표색 off
+				function whitehigh() {
+					document.querySelector("#high").src = "image/whitehigh.png";
+				}
+
+	// 흰 집 색 on
+				function yellowhm() {
+					document.querySelector("#whitehm").src = "image/yellowhm.png";
+				}
+	// 노랑 집 색 off
+				function whitehm() {
+					document.querySelector("#whitehm").src = "image/whitehm.png";
+				}
+
+	// 흰 돋보기 색 on
+				function yellowfind() {
+					document.querySelector("#whitefind").src = "image/yellowfind.png";
+				}
+	// 노랑 돋보기 색 off
+				function whitefind() {
+					document.querySelector("#whitefind").src = "image/whitefind.png";
+				}
+
+	// 흰 하트 색 on
+				function yellowht() {
+					document.querySelector("#whiteht").src = "image/yellowht.png";
+				}
+	// 노랑 하트 색 off
+				function whiteht() {
+					document.querySelector("#whiteht").src = "image/whiteht.png";
+				}
+
+	// 흰 공유 색 on
+				function yellowfree() {
+					document.querySelector("#whitefree").src = "image/yellowfree.png";
+				}
+	// 노랑 공유 색 off
+				function whitefree() {
+					document.querySelector("#whitefree").src = "image/whitefree.png";
+				}
+
+	// 흰 아래 화살표 색 on
+				function yellowdown() {
+					document.querySelector("#whitedown").src = "image/yellowdown.png";
+				}
+	// 노랑 아래 화살표 색 off
+				function whitedown() {
+					document.querySelector("#whitedown").src = "image/whitedown.png";
+				}
+// 공지사항 오픈
+			function openfullbox() {
+				var open = document.querySelector("#noticeboxfull");
+				var close = document.querySelector("#noticebox");
+				open.style.display = "block";
+				open.style.display = "flex";
+				close.style.display = "none";
+			}
+
+// 공지사항 닫기
+			function closefullbox() {
+				var close = document.querySelector("#noticeboxfull");
+				var open = document.querySelector("#noticebox");
+				close.style.display = "none";
+				open.style.display = "block";
+			}
+
+		</script>
+	</head>
+	<body>
+		<div id="container">
+			<div id="menubar">
+				<div onmouseover="yellowhigh();" onmouseout="whitehigh();">
+					<a href="#container"><img src="image/whitehigh.png" alt="흰색위화살표아이콘" id="high"></a>
+				</div>
+				<div onmouseover="yellowhm();" onmouseout="whitehm();">
+					<a href="main.html"><img src="image/whitehm.png" alt="흰색홈아이콘" id="whitehm"></a>
+				</div>
+				<div onmouseover="yellowfind();" onmouseout="whitefind();">
+					<a href="content.html"><img src="image/whitefind.png" alt="흰색검색아이콘" id="whitefind"></a>
+				</div>
+				<div onmouseover="yellowht();" onmouseout="whiteht();">
+					<img src="image/whiteht.png" alt="흰색하트아이콘" id="whiteht">
+				</div>
+				<div onmouseover="yellowfree();" onmouseout="whitefree();">
+					<img src="image/whitefree.png" alt="흰색공유아이콘" id="whitefree">
+				</div>
+				<div onmouseover="yellowdown();" onmouseout="whitedown();">
+					<a href="#foot"><img src="image/whitedown.png" alt="흰색아래화살표아이콘" id="whitedown"></a>
+				</div>
+			</div>
+			<header>
+				<div class="headtop">
+					<div class="sns">
+						<img src="image/instarlogo.png" alt="인스타그램로고사진" usemap="#insta">
+						<img src="image/facelogo.png" alt="페이스북로고사진" usemap="#face">
+						<img src="image/birdlogo.png" alt="트위터로고사진" usemap="#bird">
+					</div>
+					<div class="headlogo">
+						<img src="image/headlogo.png" alt="헤드로고사진" usemap="#gohome">
+							<map name="gohome">
+								<area target="_self" shape="rect" coords="0,0,387,64" href="main.html" alt="홈으로가기">
+							</map>
+					</div>
+					<div class="login">
+						<div>
+							<a href="login.html"><p>로그인</p></a>
+						</div>
+						<div>
+							<a href="#"><p>가입하기</p></a>
+						</div>
+					</div>
+				</div>
+				<div class="mainheadbot">
+					<div class="headbot">
+						<div>
+							
+						</div>
+						<div id="headmenu">
+							<div>
+								<h4>캠핑장검색</h4>
+								<a href="map.html"><p>지도검색</p></a>
+								<a href="content.html"><p>컨텐츠검색</p></a>
+							</div>
+							<div>
+								<h4>이달의캠핑장</h4>
+								<a href="month_page.html"><p>이달의캠핑장</p></a>
+							</div>
+							<div>
+								<h4>캠핑꿀팁</h4>
+								<a href="camptip1.html"><p>장비꿀팁</p></a>
+								<a href="camptip2.html"><p>맛있는요리</p></a>
+								<a href="camptip3.html"><p>계절별컨텐츠</p></a>
+							</div>
+						</div>
+						<div>
+
+						</div>
+					</div>
+				</div>
+			</header>
+		<section>
+				<article class="arc1">
+					<div class="arcbox1">
+						<div id="articlemenu1">
+							<div>
+								<img src="image/i.png" alt="i로고">
+								<p>코로나19(COVID-19) 관련 안내</p>
+							</div>
+							<div>
+								<p>현재 시행되고 있는 여행 제한 조치를 반드시 확인해주세요. 경우에 따라 특정목적의 여행만 허용되거나,<br>관광 목적의 여행이 제한될 수 있는 점 유의하시기 바랍니다.<br><br><a href="#">자세히 알아보기</a></p>
+							</div>
+						</div>
+						<div id="menubut" onclick="view();">
+							<img src="image/down.png" alt="아래화살표로고" class="articlemenuimg">
+						</div>
+					</div>
+					<div id="noticemain">
+						<div id="noticeboxfull">
+							<div id="noticeimg">
+								<img src="image/close.png" alt="닫기아이콘" onclick="closefullbox();">
+							</div>
+							<div class="noticeboxtop">
+								<div class="noticeboxcolor1">
+									<p>캠핑장 운영수칙 필독사항<br><span>6가지 운영수칙</span></p>
+								</div>
+								<div class="noticeboxcolor2">
+									<p>코로나19 방침 공지사항<br><span>코로나19로 인한 캠핑장 안내</span></p>
+								</div>
+								<div class="noticeboxcolor3">
+									<p>8월 캠핑장 예약 안내<br><span>8월 예약 안내사항</span></p>
+								</div>
+								<div class="noticeboxcolor4">
+									<p>2021 캠핑 페스티벌 안내<br><span>한탕강 페스티벌 안내</span></p>
+								</div>
+								<div class="noticeboxcolor5">
+									
+								</div>
+								<div class="noticeboxcolor6">
+	
+								</div>
+							</div>
+							<div class="noticeboxbot">
+								<img src="image/noticebox.jpg" alt="공지사항사진">
+							</div>
+						</div>
+						<div id="noticebox" onclick="openfullbox();">
+							<img src="image/notice.png" alt="공지사항아이콘">
+							<p>공지사항</p>
+						</div>
+					</div>
+					</article>
+				<article class="arc0">
+<!--▼ 여기부터 -->
+					<div class="camname">
+						<img src="image/campfind1.jpg" alt="산 배경">
+						<div id="bc">
+						</div>
+					</div>
+						<h3>
+<!---->							사계절 야영장
+						</h3>
+				</article>
+	
+				<article class="arc2">
+					<div class="arcmain">
+<!---->						<img src="image/chungcheong/(1)main.jpg">
+					</div>
+					<div class="arcinfo">
+						<table>
+							<tr>
+								<th width="30%" class="h-top">주소</th>
+<!---->								<td width="70%" class="d-top">충청북도 영동군 상촌면 물한계곡로 700</td>
+							</tr>
+							<tr>
+								<th class="th">캠핑장 환경</th>
+<!---->								<td class="td">산 / 민간</td>
+							</tr>
+							<tr>
+								<th class="th">캠핑장 유형</th>
+<!---->								<td class="td">일반 야영장</td>
+							</tr>
+							<tr>
+								<th class="th">운영기간</th>
+<!---->								<td class="td">봄, 여름, 가을, 겨울</td>
+							</tr>
+							<tr>
+								<th class="h-bottom">홈페이지</th>
+<!---->								<td class="d-bottom">없음</td>
+							</tr>
+						</table>
+					</div>
+				</article>
+				
+				<article class="arc3">
+					<ul>
+						<a href="#1"  class="li1">
+							<div></div>
+							<li class="liline liline1">캠핑장 소개</li>
+						</a>
+						<a href="#1"  class="li1">
+							<div></div>
+							<li class="liline">이용안내</li>
+						</a>
+						<a href="#1"  class="li1">
+							<div></div>
+							<li class="liline">위치/주변정보</li>
+						</a>
+						<a href="#1"  class="li1">
+							<div></div>
+							<li class="liline liline4">공지사항</li>
+						</a>
+					</ul>
+				</article>
+				
+				<article id="arc4">
+					<div class="arc4-pic">
+<!---->						<img src="image/chungcheong/(1)detalied1.jpg" alt="캠핑장 소개1">
+<!---->						<img src="image/chungcheong/(1)detalied2.jpg" alt="캠핑장 소개2">
+<!---->						<img src="image/chungcheong/(1)detalied3.jpg" alt="캠핑장 소개3">
+					</div>
+					<p class="tagname"> ▼ 캠핑장 시설 정보</p>
+					<hr>
+					<div class="arc4-icon">
+						<div class="icon1">
+							<div>
+<!---->								<img src="image/swim.png" alt="수영장 아이콘">
+							</div>
+<!---->							<p>수영장</p>
+						</div>
+						<div class="icon2">
+							<div>
+<!---->								<img src="image/hotwater.png" alt="온수 아이콘">
+							</div>
+<!---->							<p>온수</p>
+						</div>
+						<div class="icon3">
+							<div>
+<!---->								<img src="image/dog.png" alt="반려동물 아이콘">
+							</div>
+<!---->							<p>반려동물</p>
+						</div>
+						<div class="icon4">
+							<div>
+<!---->								<img src="image/wifi.png" alt="와이파이 아이콘">
+							</div>
+<!---->							<p>와이파이</p>
+						</div>
+						<div class="icon5">
+							<div>
+<!---->								<img src="image/hike.png" alt="등산 아이콘">
+							</div>
+<!---->							<p>등산</p>
+						</div>
+					</div>
+					<p class="tagname"> ▼ 캠핑장 주요시설</p>
+					<hr>
+					<div class="arc4-facil">
+						<table>
+							<tr>
+								<th>주요시설</th>
+<!---->								<td>야영장사이트(14개)</td>
+							</tr>
+							<tr>
+								<th>기타 부대시설</th>
+<!---->								<td>없음</td>
+							</tr>
+							<tr>
+								<th>사이트 크기</th>
+<!---->								<td>3 * 6 : 14개</td>
+							</tr>
+							<tr>
+								<th>캠핑 장비 대여</th>
+<!---->								<td>불가능</td>
+							</tr>
+							<tr>
+								<th>화로대</th>
+<!---->								<td>개별</td>
+							</tr>
+						</table>
+					</div>
+				</article>
+					
+				<article id="arc5">
+					<p class="tagname"> ▼ 캠핑장 배치도 </p>
+					<hr>
+					<div class="arc5-seat">
+<!---->						<img src="image/chungcheong/(1)seat.jpg" alt="캠핑장 배치도">
+					</div>
+					<p class="tagname"> ▼ 캠핑장 안내사항 </p>
+					<hr>
+					<div class="arc5-guide">
+						<ul>
+							<li>입실 시, <span>QR코드 인식</span>과 <span>체온 체크</span>해주세요.</li>
+							<li>입실하셨다면 로비에 비치되어 있는 손소독제로 <span>손 소독</span>해주세요.</li>
+							<li><span>소화기</span>와 <span>인터폰</span>은 로비와 각 사이트마다 구비되어 있으니 숙지해주시기 바랍니다.</li>
+							<li>퇴실 하시기 전 사용하셨던 자리 정리 및 <span>로비에서 체크아웃</span> 해주시기 바랍니다.</li>
+						</ul>
+					</div>
+				</article>
+				
+				<article id="arc6">
+					<p class="tagname"> ▼ 캠핑장 위치 </p>
+					<hr>
+					<div class="arc6-map">
+<!---->						<img src="image/chungcheong/(1)map.jpg" alt="캠핑장 위치">
+					</div>
+					<p class="tagname"> ▼ 주변 관광지 </p>
+					<hr>
+					<div class="arc6-spot">
+						<div class="spot1">
+							<img src="image/chungcheong/(1)tour1.jpg" alt="관광지1">
+							<div class="spottxt">
+<!---->								<h3>영동와인터널</h3>
+<!---->								<p>충청북도 영동군 영동읍 영동힐링로 30</p>
+							</div>
+						</div>
+						<div class="spot2">
+							<img src="image/chungcheong/(1)tour2.jpg" alt="관광지2">
+							<div class="spottxt">
+<!---->								<h3>물한계곡</h3>
+<!---->								<p>충청북도 영동군 상촌면 물한리 1197</p>
+							</div>
+						</div>
+						<div class="spot3">
+							<img src="image/lastfoot.png" alt="no-image">
+							<div class="spottxt">
+								<h3>등록된 정보가 없습니다.</h3>
+								<p></p>
+							</div>
+						</div>
+						<div class="spot4">
+							<img src="image/lastfoot.png" alt="no-image">
+							<div class="spottxt">
+								<h3>등록된 정보가 없습니다.</h3>
+								<p></p>
+							</div>
+						</div>
+					</div>
+				</article>
+				
+				<article id="arc7">
+					<p class="tagname"> ▼ 공지사항 </p>
+					<hr>
+					<div class="arc7-notice">
+						<p>등록된 공지사항이 없습니다.</p>
+					</div>
+				</article>
+			</section>
+
+			<footer id="foot">
+				<div class="ftboxtop">
+					<div>
+						<div>
+							<p>홈</p>
+							<p>회사소개</p>
+							<p>이용 약관</p>
+							<p>파트너</p>
+							<p>자주 묻는 질문</p>
+							<p>최저가 보장제</p>
+						</div>
+						<div>
+							<img src="image/instaline.png" alt="인스타그램로고사진" usemap="#insta">
+							<map name="insta">
+								<area target="_blank" shape="rect" coords="0,0,78,78" href="https://www.instagram.com" alt="인스타그램">
+							</map>
+							<img src="image/faceline.png" alt="페이스북로고사진" usemap="#face">
+							<map name="face">
+								<area target="_blank" shape="rect" coords="0,0,78,78" href="https://www.facebook.com" alt="페이스북">
+							</map>
+							<img src="image/birdline.png" alt="트위터로고사진" usemap="#bird">
+							<map name="bird">
+								<area target="_blank" shape="rect" coords="0,0,78,78" href="https://www.twitter.com" alt="트위터">
+							</map>
+						</div>
+					</div>
+				</div>
+				<div class="ftboxmid">
+					<div>
+						<div>
+							<p>법인명(상호) 주식회사 캠프퍼니 &nbsp;&nbsp;사업자 등록번호 안내:[125-81-7597] &nbsp;&nbsp;[사업자 정보 확인]<br>전화:031-000-0000 &nbsp;&nbsp;팩스:031-000-0000 &nbsp;&nbsp;주소:서울시 성동구 왕십리로 303<br>ⓒCAMPFUNNY.com</p>
+						</div>
+						<div>
+							<img src="image/lastfoot.png" alt="홈페이지로고사진">
+						</div>
+					</div>
+				</div>
+				<div class="ftboxbot">
+					<p>ⓒ2021(주)캠프퍼니.All rights reserved</p>
+				</div>
+			</footer>
+		</div>
+	</body>
+</html>

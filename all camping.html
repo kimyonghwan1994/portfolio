@@ -1,0 +1,946 @@
+<!doctype html>
+<html lang="ko">
+	<head>
+		<!-- noto sans 글자체 -->
+		<link rel="stylesheet" href="css/all camping.css" type="text/css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<title>
+			all camping
+		</title>
+		<script>
+
+// 코로나 안내문
+			var flag = true;
+			function view() {
+				if (flag) {
+					flag = false;
+					down();
+				}
+				else {
+					flag = true;
+					up();
+				}
+
+				function down() {
+					var down = document.querySelector(".arcbox1");
+					var downin = document.querySelector("#articlemenu1");
+					var change = document.querySelectorAll(".articlemenuimg")[0];
+					down.style.height = "150px";
+					downin.style.height = "150px";
+					change.style.transform = "rotateZ(180deg)";
+				}
+				function up() {
+					var up = document.querySelector(".arcbox1");
+					var upin = document.querySelector("#articlemenu1");
+					var change = document.querySelectorAll(".articlemenuimg")[0];
+					up.style.height = "50px";
+					upin.style.height = "50px";
+					change.style.transform = "rotateZ(0deg)";
+				}
+			}
+// 공지사항 오픈
+			function openfullbox() {
+							var open = document.querySelector("#noticeboxfull");
+							var close = document.querySelector("#noticebox");
+							open.style.display = "block";
+							open.style.display = "flex";
+							close.style.display = "none";
+						}
+
+// 공지사항 닫기
+			function closefullbox() {
+				var close = document.querySelector("#noticeboxfull");
+				var open = document.querySelector("#noticebox");
+				close.style.display = "none";
+				open.style.display = "block";
+			}
+// 우측 고정 메뉴바
+	// 흰 위 화살표 색 on
+				function yellowhigh() {
+					document.querySelector("#high").src = "image/yellowhigh.png";
+				}
+	// 노랑 위 화살표색 off
+				function whitehigh() {
+					document.querySelector("#high").src = "image/whitehigh.png";
+				}
+
+	// 흰 집 색 on
+				function yellowhm() {
+					document.querySelector("#whitehm").src = "image/yellowhm.png";
+				}
+	// 노랑 집 색 off
+				function whitehm() {
+					document.querySelector("#whitehm").src = "image/whitehm.png";
+				}
+
+	// 흰 돋보기 색 on
+				function yellowfind() {
+					document.querySelector("#whitefind").src = "image/yellowfind.png";
+				}
+	// 노랑 돋보기 색 off
+				function whitefind() {
+					document.querySelector("#whitefind").src = "image/whitefind.png";
+				}
+
+	// 흰 하트 색 on
+				function yellowht() {
+					document.querySelector("#whiteht").src = "image/yellowht.png";
+				}
+	// 노랑 하트 색 off
+				function whiteht() {
+					document.querySelector("#whiteht").src = "image/whiteht.png";
+				}
+
+	// 흰 공유 색 on
+				function yellowfree() {
+					document.querySelector("#whitefree").src = "image/yellowfree.png";
+				}
+	// 노랑 공유 색 off
+				function whitefree() {
+					document.querySelector("#whitefree").src = "image/whitefree.png";
+				}
+
+	// 흰 아래 화살표 색 on
+				function yellowdown() {
+					document.querySelector("#whitedown").src = "image/yellowdown.png";
+				}
+	// 노랑 아래 화살표 색 off
+				function whitedown() {
+					document.querySelector("#whitedown").src = "image/whitedown.png";
+				}
+
+		</script>
+	</head>
+	<body>
+		<div id="container">
+			<div id="menubar">
+				<div onmouseover="yellowhigh();" onmouseout="whitehigh();">
+					<a href="#container"><img src="image/whitehigh.png" alt="흰색위화살표아이콘" id="high"></a>
+				</div>
+				<div onmouseover="yellowhm();" onmouseout="whitehm();">
+					<a href="main.html"><img src="image/whitehm.png" alt="흰색홈아이콘" id="whitehm"></a>
+				</div>
+				<div onmouseover="yellowfind();" onmouseout="whitefind();">
+					<a href="content.html"><img src="image/whitefind.png" alt="흰색검색아이콘" id="whitefind"></a>
+				</div>
+				<div onmouseover="yellowht();" onmouseout="whiteht();">
+					<img src="image/whiteht.png" alt="흰색하트아이콘" id="whiteht">
+				</div>
+				<div onmouseover="yellowfree();" onmouseout="whitefree();">
+					<img src="image/whitefree.png" alt="흰색공유아이콘" id="whitefree">
+				</div>
+				<div onmouseover="yellowdown();" onmouseout="whitedown();">
+					<a href="#foot"><img src="image/whitedown.png" alt="흰색아래화살표아이콘" id="whitedown"></a>
+				</div>
+			</div>
+			<header>
+				<div class="headtop">
+					<div class="sns">
+						<img src="image/instarlogo.png" alt="인스타그램로고사진" usemap="#insta">
+						<img src="image/facelogo.png" alt="페이스북로고사진" usemap="#face">
+						<img src="image/birdlogo.png" alt="트위터로고사진" usemap="#bird">
+					</div>
+					<div class="headlogo">
+						<img src="image/headlogo.png" alt="헤드로고사진" usemap="#gohome">
+							<map name="gohome">
+								<area target="_self" shape="rect" coords="0,0,387,64" href="main.html" alt="홈으로가기">
+							</map>
+					</div>
+					<div class="login">
+						<div>
+							<a href="login.html"><p>로그인</p></a>
+						</div>
+						<div>
+							<a href="#"><p>가입하기</p></a>
+						</div>
+					</div>
+				</div>
+				<div class="mainheadbot">
+					<div class="headbot">
+						<div>
+							
+						</div>
+						<div id="headmenu">
+							<div>
+								<h4>캠핑장검색</h4>
+								<a href="map.html"><p>지도검색</p></a>
+								<a href="content.html"><p>컨텐츠검색</p></a>
+							</div>
+							<div>
+								<h4>이달의캠핑장</h4>
+								<a href="month_page.html"><p>이달의캠핑장</p></a>
+							</div>
+							<div>
+								<h4>캠핑꿀팁</h4>
+								<a href="camptip1.html"><p>장비꿀팁</p></a>
+								<a href="camptip2.html"><p>맛있는요리</p></a>
+								<a href="camptip3.html"><p>계절별컨텐츠</p></a>
+							</div>
+						</div>
+						<div>
+
+						</div>
+					</div>
+				</div>
+			</header>
+			<section>
+                <article id="arc2">
+					<div id="noticemain">
+						<div id="noticeboxfull">
+							<div id="noticeimg">
+								<img src="image/close.png" alt="닫기아이콘" onclick="closefullbox();">
+							</div>
+							<div class="noticeboxtop">
+								<div class="noticeboxcolor1">
+									<p>캠핑장 운영수칙 필독사항<br><span>6가지 운영수칙</span></p>
+								</div>
+								<div class="noticeboxcolor2">
+									<p>코로나19 방침 공지사항<br><span>코로나19로 인한 캠핑장 안내</span></p>
+								</div>
+								<div class="noticeboxcolor3">
+									<p>8월 캠핑장 예약 안내<br><span>8월 예약 안내사항</span></p>
+								</div>
+								<div class="noticeboxcolor4">
+									<p>2021 캠핑 페스티벌 안내<br><span>한탕강 페스티벌 안내</span></p>
+								</div>
+								<div class="noticeboxcolor5">
+									
+								</div>
+								<div class="noticeboxcolor6">
+
+								</div>
+							</div>
+							<div class="noticeboxbot">
+								<img src="image/noticebox.jpg" alt="공지사항사진">
+							</div>
+						</div>
+						<div id="noticebox" onclick="openfullbox();">
+							<img src="image/notice.png" alt="공지사항아이콘">
+							<p>공지사항</p>
+						</div>
+					</div>
+                    <div id="findmain">
+                        <div id="findhead">
+                            <form>
+                                <input type="text" placeholder="검색">
+                            </form>
+							<div>
+								<div>
+									<p><a href="map.html">지도로보기</a></p>
+								</div>
+								<div>
+									<p><a href="content.html">테마로보기</a></p>
+								</div>
+							</div>
+                        </div>
+                        <div class="findsub findsub1">
+                            <div class="findbox1">
+                                <img src="image/gyeonggi/(1)main.jpg" alt="사진">
+                            </div>
+                            <div class="findbox2">
+                                <p><span>[경기도]한탄강 오토 캠핑장</span><br><br>주소 : 경기도 연천군 전곡읍 전곡리 640
+                                <br>전화번호 : 010 - 0000 - 0000</p>
+                            </div>
+                            <div id="detail">
+                                <a href="gyeonggi1.html">자세히 보기</a>
+                            </div>
+                        </div>
+                        <div class="findsub findsub1">
+                            <div class="findbox1">
+                                <img src="image/gyeonggi/(2)main.jpg" alt="사진">
+                            </div>
+                            <div class="findbox2">
+                                <p><span>[경기도]클라인캠프 빌리지</span><br><br>주소 : 경기도 양평군 개군면 추읍로 268-37
+                                <br>전화번호 : 010 - 0000 - 0000</p>
+                            </div>
+                            <div id="detail">
+                                <a href="gyeonggi2.html">자세히 보기</a>
+                            </div>
+                        </div>
+                        <div class="findsub findsub1">
+                            <div class="findbox1">
+                                <img src="image/gyeonggi/(3)main.jpg" alt="사진">
+                            </div>
+                            <div class="findbox2">
+                                <p><span>[경기도]킨텍스 캠핑장</span><br><br>주소 : 경기도 고양시 일산서구 킨텍스로 217-25
+                                <br>전화번호 : 010 - 0000 - 0000</p>
+                            </div>
+                            <div id="detail">
+                                <a href="gyeonggi3.html">자세히 보기</a>
+                            </div>
+                        </div>
+                        <div class="findsub findsub1">
+                            <div class="findbox1">
+                                <img src="image/gyeonggi/(4)main.jpg" alt="사진">
+                            </div>
+                            <div class="findbox2">
+                                <p><span>[경기도]즐거운 나들이 캠핑장</span><br><br>주소 : 경기도 포천시 가산면 우금리 96
+                                <br>전화번호 : 010 - 0000 - 0000</p>
+                            </div>
+                            <div id="detail">
+                                <a href="gyeonggi4.html">자세히 보기</a>
+                            </div>
+                        </div>
+                        <div class="findsub findsub1">
+                            <div class="findbox1">
+                                <img src="image/gyeonggi/(5)main.jpg" alt="사진">
+                            </div>
+                            <div class="findbox2">
+                                <p><span>[경기도]힐링별밤 캠핑장</span><br><br>주소 : 경기도 남양주시 수동면 비룡로 1516-19
+                                <br>전화번호 : 010 - 0000 - 0000</p>
+                            </div>
+                            <div id="detail">
+                                <a href="gyeonggi5.html">자세히 보기</a>
+                            </div>
+                        </div>
+                        <div class="findsub findsub1">
+                            <div class="findbox1">
+                                <img src="image/gyeonggi/(6)main.jpg" alt="사진">
+                            </div>
+                            <div class="findbox2">
+                                <p><span>[경기도]청소년 야영장</span><br><br>주소 : 경기도 광주시 퇴촌면 천진암로 1243
+                                <br>전화번호 : 010 - 0000 - 0000</p>
+                            </div>
+                            <div id="detail">
+                                <a href="gyeonggi6.html">자세히 보기</a>
+                            </div>
+                        </div>
+                        <div class="findsub findsub1">
+                            <div class="findbox1">
+                                <img src="image/gyeonggi/(7)main.jpg" alt="사진">
+                            </div>
+                            <div class="findbox2">
+                                <p><span>[경기도]골든밸리 가족 캠핑장</span><br><br>주소 : 경기도 성남시 수정구 달래내로 221번길 17-5
+                                <br>전화번호 : 010 - 0000 - 0000</p>
+                            </div>
+                            <div id="detail">
+                                <a href="gyeonggi7.html">자세히 보기</a>
+                            </div>
+                        </div>
+                        <div class="findsub findsub1">
+                            <div class="findbox1">
+                                <img src="image/gyeonggi/(8)main.jpg" alt="사진">
+                            </div>
+                            <div class="findbox2">
+                                <p><span>[경기도]미장호수 휴 캠핑장</span><br><br>주소 : 경기도 파주시 광탄면 기산리 459-6
+                                <br>전화번호 : 010 - 0000 - 0000</p>
+                            </div>
+                            <div id="detail">
+                                <a href="gyeonggi8.html">자세히 보기</a>
+                            </div>
+                        </div>
+                        <div class="findsub findsub1">
+                            <div class="findbox1">
+                                <img src="image/gyeonggi/(9)main.jpg" alt="사진">
+                            </div>
+                            <div class="findbox2">
+                                <p><span>[경기도]자연숲 캠핑장</span><br><br>주소 : 경기도 용인시 처인구 원삼면 좌항리 224-1
+                                <br>전화번호 : 010 - 0000 - 0000</p>
+                            </div>
+                            <div id="detail">
+                                <a href="gyeonggi9.html">자세히 보기</a>
+                            </div>
+                        </div>
+                        <div class="findsub findsub1">
+                            <div class="findbox1">
+                                <img src="image/gyeonggi/(10)main.jpg" alt="사진">
+                            </div>
+                            <div class="findbox2">
+                                <p><span>[서울시]한강공원 난지 캠핑장</span><br><br>주소 : 서울특별시 마포구 한강난지로 28 한강공원
+                                <br>전화번호 : 010 - 0000 - 0000</p>
+                            </div>
+                            <div id="detail">
+                                <a href="gyeonggi10.html">자세히 보기</a>
+                            </div>
+                        </div>
+                        <div class="findsub findsub2">
+                            <div class="findbox1">
+                                <img src="image/kangwon/(1)main.jpg" alt="사진">
+                            </div>
+                            <div class="findbox2">
+                                <p><span>[강원도]송지호 오토 캠핑장</span><br><br>주소 : 강원도 고성군 죽왕면 동해대로 6090
+                                <br>전화번호 : 010 - 0000 - 0000</p>
+                            </div>
+                            <div id="detail">
+                                <a href="kangwon1.html">자세히 보기</a>
+                            </div>
+                        </div>
+                        <div class="findsub findsub2">
+                            <div class="findbox1">
+                                <img src="image/kangwon/(2)main.jpg" alt="사진">
+                            </div>
+                            <div class="findbox2">
+                                <p><span>[강원도]전망휴양림 오토 캠핑장</span><br><br>주소 : 강원도 정선군 신동읍 동강로 916-212
+                                <br>전화번호 : 010 - 0000 - 0000</p>
+                            </div>
+                            <div id="detail">
+                                <a href="kangwon2.html">자세히 보기</a>
+                            </div>
+                        </div>
+                        <div class="findsub findsub2">
+                            <div class="findbox1">
+                                <img src="image/kangwon/(3)main.jpg" alt="사진">
+                            </div>
+                            <div class="findbox2">
+                                <p><span>[강원도]망상 오토캠핑리조트</span><br><br>주소 : 강원도 동해시 동해대로6370 망상오토캠핑리조트
+                                <br>전화번호 : 010 - 0000 - 0000</p>
+                            </div>
+                            <div id="detail">
+                                <a href="kangwon3.html">자세히 보기</a>
+                            </div>
+                        </div>
+                        <div class="findsub findsub2">
+                            <div class="findbox1">
+                                <img src="image/kangwon/(4)main.jpg" alt="사진">
+                            </div>
+                            <div class="findbox2">
+                                <p><span>[강원도]연곡해변 솔향기캠핑장</span><br><br>주소 : 강원도 강릉시 연곡면 동덕리 143-11
+                                <br>전화번호 : 010 - 0000 - 0000</p>
+                            </div>
+                            <div id="detail">
+                                <a href="kangwon4.html">자세히 보기</a>
+                            </div>
+                        </div>
+                        <div class="findsub findsub2">
+                            <div class="findbox1">
+                                <img src="image/kangwon/(5)main.jpg" alt="사진">
+                            </div>
+                            <div class="findbox2">
+                                <p><span>[강원도]치악신림 오토캠핑장</span><br><br>주소 : 강원도 홍천군 내촌면 답풍리 258-2
+                                <br>전화번호 : 010 - 0000 - 0000</p>
+                            </div>
+                            <div id="detail">
+                                <a href="kangwon5.html">자세히 보기</a>
+                            </div>
+                        </div>
+                        <div class="findsub findsub2">
+                            <div class="findbox1">
+                                <img src="image/kangwon/(6)main.jpg" alt="사진">
+                            </div>
+                            <div class="findbox2">
+                                <p><span>[강원도]캠핑엔비치</span><br><br>주소 : 강원도 고성군 토성면 중앙로 646
+                                <br>전화번호 : 010 - 0000 - 0000</p>
+                            </div>
+                            <div id="detail">
+                                <a href="kangwon6.html">자세히 보기</a>
+                            </div>
+                        </div>
+                        <div class="findsub findsub2">
+                            <div class="findbox1">
+                                <img src="image/kangwon/(7)main.jpg" alt="사진">
+                            </div>
+                            <div class="findbox2">
+                                <p><span>[강원도]맹방비치 캠핑장</span><br><br>주소 : 강원도 삼척시 근덕면 하망방리 산 1-7
+                                <br>전화번호 : 010 - 0000 - 0000</p>
+                            </div>
+                            <div id="detail">
+                                <a href="kangwon7.html">자세히 보기</a>
+                            </div>
+                        </div>
+                        <div class="findsub findsub2">
+                            <div class="findbox1">
+                                <img src="image/kangwon/(8)main.jpg" alt="사진">
+                            </div>
+                            <div class="findbox2">
+                                <p><span>[강원도]백담고을 캠핑장</span><br><br>주소 : 강원도 인제군 북면 백담로 128
+                                <br>전화번호 : 010 - 0000 - 0000</p>
+                            </div>
+                            <div id="detail">
+                                <a href="kangwon8.html">자세히 보기</a>
+                            </div>
+                        </div>
+                        <div class="findsub findsub2">
+                            <div class="findbox1">
+                                <img src="image/kangwon/(9)main.jpg" alt="사진">
+                            </div>
+                            <div class="findbox2">
+                                <p><span>[강원도]데일리랜드</span><br><br>주소 : 강원도 춘천시 동산면 윗성골길 36
+                                <br>전화번호 : 010 - 0000 - 0000</p>
+                            </div>
+                            <div id="detail">
+                                <a href="kangwon9.html">자세히 보기</a>
+                            </div>
+                        </div>
+                        <div class="findsub findsub2">
+                            <div class="findbox1">
+                                <img src="image/kangwon/(10)main.jpg" alt="사진">
+                            </div>
+                            <div class="findbox2">
+                                <p><span>[강원도]속초해변 국민여가캠핑장</span><br><br>주소 : 강원도 속초시 해오름로 186
+                                <br>전화번호 : 010 - 0000 - 0000</p>
+                            </div>
+                            <div id="detail">
+                                <a href="kangwon10.html">자세히 보기</a>
+                            </div>
+                        </div>
+                        <div class="findsub findsub3">
+                            <div class="findbox1">
+                                <img src="image/gyeongsang/(1)main.jpg" alt="사진">
+                            </div>
+                            <div class="findbox2">
+                                <p><span>[경상북도]산내별빛 오토 캠핑장</span><br><br>주소 : 경상북도 경주시 산내면 대현리 산 394
+                                <br>전화번호 : 010 - 0000 - 0000</p>
+                            </div>
+                            <div id="detail">
+                                <a href="gyeongsang1.html">자세히 보기</a>
+                            </div>
+                        </div>
+                        <div class="findsub findsub3">
+                            <div class="findbox1">
+                                <img src="image/gyeongsang/(2)main.jpg" alt="사진">
+                            </div>
+                            <div class="findbox2">
+                                <p><span>[경상북도]수상레저타운 캠핑장</span><br><br>주소 : 경상북도 안동시 임동면 중평리 1040
+                                <br>전화번호 : 010 - 0000 - 0000</p>
+                            </div>
+                            <div id="detail">
+                                <a href="gyeongsang2.html">자세히 보기</a>
+                            </div>
+                        </div>
+                        <div class="findsub findsub3">
+                            <div class="findbox1">
+                                <img src="image/gyeongsang/(3)main.jpg" alt="사진">
+                            </div>
+                            <div class="findbox2">
+                                <p><span>[경상북도]학가산 우래 자연휴양림</span><br><br>주소 : 경상북도 예천군 보문면 휴양림길 210
+                                <br>전화번호 : 010 - 0000 - 0000</p>
+                            </div>
+                            <div id="detail">
+                                <a href="gyeongsang3.html">자세히 보기</a>
+                            </div>
+                        </div>
+                        <div class="findsub findsub3">
+                            <div class="findbox1">
+                                <img src="image/gyeongsang/(4)main.jpg" alt="사진">
+                            </div>
+                            <div class="findbox2">
+                                <p><span>[경상북도]조은자리 캠핑장</span><br><br>주소 : 경상북도 청도군 운문면 신원리 398번지
+                                <br>전화번호 : 010 - 0000 - 0000</p>
+                            </div>
+                            <div id="detail">
+                                <a href="gyeongsang4.html">자세히 보기</a>
+                            </div>
+                        </div>
+                        <div class="findsub findsub3">
+                            <div class="findbox1">
+                                <img src="image/gyeongsang/(5)main.jpg" alt="사진">
+                            </div>
+                            <div class="findbox2">
+                                <p><span>[경상북도]늘솔길 캠핑장</span><br><br>주소 : 경상북도 포항시 북구 기계면 봉계리 1139-1
+                                <br>전화번호 : 010 - 0000 - 0000</p>
+                            </div>
+                            <div id="detail">
+                                <a href="gyeongsang5.html">자세히 보기</a>
+                            </div>
+                        </div>
+                        <div class="findsub findsub4">
+                            <div class="findbox1">
+                                <img src="image/gyeongsang/(6)main.jpg" alt="사진">
+                            </div>
+                            <div class="findbox2">
+                                <p><span>[경상남도]신어산 자연숲 캠핑장</span><br><br>주소 : 경상남도 김해시 상동면 장척로 462번길 140
+                                <br>전화번호 : 010 - 0000 - 0000</p>
+                            </div>
+                            <div id="detail">
+                                <a href="gyeongsang6.html">자세히 보기</a>
+                            </div>
+                        </div>
+                        <div class="findsub findsub4">
+                            <div class="findbox1">
+                                <img src="image/gyeongsang/(7)main.jpg" alt="사진">
+                            </div>
+                            <div class="findbox2">
+                                <p><span>[경상남도]상주 은모래비치 캠핑장</span><br><br>주소 : 경상남도 남해군 상주면 상주리 1227
+                                <br>전화번호 : 010 - 0000 - 0000</p>
+                            </div>
+                            <div id="detail">
+                                <a href="gyeongsang7.html">자세히 보기</a>
+                            </div>
+                        </div>
+                        <div class="findsub findsub4">
+                            <div class="findbox1">
+                                <img src="image/gyeongsang/(8)main.jpg" alt="사진">
+                            </div>
+                            <div class="findbox2">
+                                <p><span>[경상남도]미르 오토 캠핑장</span><br><br>주소 : 경상남도 밀양시 산외면 밀양대로 3400-127
+                                <br>전화번호 : 010 - 0000 - 0000</p>
+                            </div>
+                            <div id="detail">
+                                <a href="gyeongsang8.html">자세히 보기</a>
+                            </div>
+                        </div>
+                        <div class="findsub findsub4">
+                            <div class="findbox1">
+                                <img src="image/gyeongsang/(9)main.jpg" alt="사진">
+                            </div>
+                            <div class="findbox2">
+                                <p><span>[경상남도]욕지도 파라다이스 캠핑장</span><br><br>주소 : 경상남도 예산군 응봉면 예당관광로 123
+                                <br>전화번호 : 010 - 0000 - 0000</p>
+                            </div>
+                            <div id="detail">
+                                <a href="gyeongsang9.html">자세히 보기</a>
+                            </div>
+                        </div>
+                        <div class="findsub findsub4">
+                            <div class="findbox1">
+                                <img src="image/gyeongsang/(10)main.jpg" alt="사진">
+                            </div>
+                            <div class="findbox2">
+                                <p><span>[경상남도]편백숲길관광농원 캠핑장</span><br><br>주소 : 경상남도 통영시 천대국치길 297-10
+                                <br>전화번호 : 010 - 0000 - 0000</p>
+                            </div>
+                            <div id="detail">
+                                <a href="gyeongsang10.html">자세히 보기</a>
+                            </div>
+                        </div>
+                        <div class="findsub findsub5">
+                            <div class="findbox1">
+                                <img src="image/chungcheong/(1)main.jpg" alt="사진">
+                            </div>
+                            <div class="findbox2">
+                                <p><span>[충청북도]사계절 야영장</span><br><br>주소 : 충청북도 영동군 상촌면 물한계곡로 700
+                                <br>전화번호 : 010 - 0000 - 0000</p>
+                            </div>
+                            <div id="detail">
+                                <a href="chungcheong1.html">자세히 보기</a>
+                            </div>
+                        </div>
+                        <div class="findsub findsub5">
+                            <div class="findbox1">
+                                <img src="image/chungcheong/(2)main.jpg" alt="사진">
+                            </div>
+                            <div class="findbox2">
+                                <p><span>[충청북도]월악산 국립공원 캠핑장</span><br><br>주소 : 충청북도 제천시 한수면 미륵송계로 1647 덕주야영장
+                                <br>전화번호 : 010 - 0000 - 0000</p>
+                            </div>
+                            <div id="detail">
+                                <a href="chungcheong2.html">자세히 보기</a>
+                            </div>
+                        </div>
+                        <div class="findsub findsub5">
+                            <div class="findbox1">
+                                <img src="image/chungcheong/(3)main.jpg" alt="사진">
+                            </div>
+                            <div class="findbox2">
+                                <p><span>[충청북도]아빠 캠핑가 캠핑장</span><br><br>주소 : 충청북도 진천군 백곡면 안구수길 34-28 구수리 낚시터
+                                <br>전화번호 : 010 - 0000 - 0000</p>
+                            </div>
+                            <div id="detail">
+                                <a href="chungcheong3.html">자세히 보기</a>
+                            </div>
+                        </div>
+                        <div class="findsub findsub5">
+                            <div class="findbox1">
+                                <img src="image/chungcheong/(4)main.jpg" alt="사진">
+                            </div>
+                            <div class="findbox2">
+                                <p><span>[충청북도]미래지테마공원 캠핑장</span><br><br>주소 : 충청북도 청주시 청원구 오창읍 용두리 170
+                                <br>전화번호 : 010 - 0000 - 0000</p>
+                            </div>
+                            <div id="detail">
+                                <a href="chungcheong4.html">자세히 보기</a>
+                            </div>
+                        </div>
+                        <div class="findsub findsub5">
+                            <div class="findbox1">
+                                <img src="image/chungcheong/(5)main.jpg" alt="사진">
+                            </div>
+                            <div class="findbox2">
+                                <p><span>[충청북도]카누 캠핑장</span><br><br>주소 : 충청북도 충주시 동량면 화암리 340
+                                <br>전화번호 : 010 - 0000 - 0000</p>
+                            </div>
+                            <div id="detail">
+                                <a href="chungcheong5.html">자세히 보기</a>
+                            </div>
+                        </div>
+                        <div class="findsub findsub6">
+                            <div class="findbox1">
+                                <img src="image/chungcheong/(6)main.jpg" alt="사진">
+                            </div>
+                            <div class="findbox2">
+                                <p><span>[충청남도]프린세스 캠핑장</span><br><br>주소 : 충청남도 공주시 치미마을길 74
+                                <br>전화번호 : 010 - 0000 - 0000</p>
+                            </div>
+                            <div id="detail">
+                                <a href="chungcheong6.html">자세히 보기</a>
+                            </div>
+                        </div>
+                        <div class="findsub findsub6">
+                            <div class="findbox1">
+                                <img src="image/chungcheong/(7)main.jpg" alt="사진">
+                            </div>
+                            <div class="findbox2">
+                                <p><span>[충청남도]대천용두야영장</span><br><br>주소 : 충청남도 보령시 웅천읍 열린바다로 100-50
+                                <br>전화번호 : 010 - 0000 - 0000</p>
+                            </div>
+                            <div id="detail">
+                                <a href="chungcheong7.html">자세히 보기</a>
+                            </div>
+                        </div>
+                        <div class="findsub findsub6">
+                            <div class="findbox1">
+                                <img src="image/chungcheong/(8)main.jpg" alt="사진">
+                            </div>
+                            <div class="findbox2">
+                                <p><span>[충청남도]늘푸른 캠핑장</span><br><br>주소 : 충청남도 서천군 마서면 한성리 658-3
+                                <br>전화번호 : 010 - 0000 - 0000</p>
+                            </div>
+                            <div id="detail">
+                                <a href="chungcheong8.html">자세히 보기</a>
+                            </div>
+                        </div>
+                        <div class="findsub findsub6">
+                            <div class="findbox1">
+                                <img src="image/chungcheong/(9)main.jpg" alt="사진">
+                            </div>
+                            <div class="findbox2">
+                                <p><span>[충청남도]국민여가캠핑장</span><br><br>주소 : 충청남도 예산군 응봉면 예당관광로 123
+                                <br>전화번호 : 010 - 0000 - 0000</p>
+                            </div>
+                            <div id="detail">
+                                <a href="chungcheong9.html">자세히 보기</a>
+                            </div>
+                        </div>
+                        <div class="findsub findsub6">
+                            <div class="findbox1">
+                                <img src="image/chungcheong/(10)main.jpg" alt="사진">
+                            </div>
+                            <div class="findbox2">
+                                <p><span>[충청남도]학암포 오토캠핑장</span><br><br>주소 : 충청남도 태안군 워북면 옥파로 1152-37
+                                <br>전화번호 : 010 - 0000 - 0000</p>
+                            </div>
+                            <div id="detail">
+                                <a href="chungcheong10.html">자세히 보기</a>
+                            </div>
+                        </div>
+                        <div class="findsub findsub7">
+                            <div class="findbox1">
+                                <img src="image/jeolla/(1)main.jpg" alt="사진">
+                            </div>
+                            <div class="findbox2">
+                                <p><span>[전라북도]갯벌 오토 캠핑장</span><br><br>주소 : 전라북도 고창군 심원면 두어1길 55-25
+                                <br>전화번호 : 010 - 0000 - 0000</p>
+                            </div>
+                            <div id="detail">
+                                <a href="jeolla1.html">자세히 보기</a>
+                            </div>
+                        </div>
+                        <div class="findsub findsub7">
+                            <div class="findbox1">
+                                <img src="image/jeolla/(2)main.jpg" alt="사진">
+                            </div>
+                            <div class="findbox2">
+                                <p><span>[전라북도]수류산골 야영장</span><br><br>주소 : 전라북도 정선군 신동읍 동강로 916-212
+                                <br>전화번호 : 010 - 0000 - 0000</p>
+                            </div>
+                            <div id="detail">
+                                <a href="jeolla2.html">자세히 보기</a>
+                            </div>
+                        </div>
+                        <div class="findsub findsub7">
+                            <div class="findbox1">
+                                <img src="image/jeolla/(3)main.jpg" alt="사진">
+                            </div>
+                            <div class="findbox2">
+                                <p><span>[전라북도]고사포 야영장</span><br><br>주소 : 전라북도 부안군 변산면 운산리 441-11
+                                <br>전화번호 : 010 - 0000 - 0000</p>
+                            </div>
+                            <div id="detail">
+                                <a href="jeolla3.html">자세히 보기</a>
+                            </div>
+                        </div>
+                        <div class="findsub findsub7">
+                            <div class="findbox1">
+                                <img src="image/jeolla/(4)main.jpg" alt="사진">
+                            </div>
+                            <div class="findbox2">
+                                <p><span>[전라북도]오수애견 캠핑장</span><br><br>주소 : 전라북도 임실군 오수면 금암리 252-5
+                                <br>전화번호 : 010 - 0000 - 0000</p>
+                            </div>
+                            <div id="detail">
+                                <a href="jeolla4.html">자세히 보기</a>
+                            </div>
+                        </div>
+                        <div class="findsub findsub7">
+                            <div class="findbox1">
+                                <img src="image/jeolla/(5)main.jpg" alt="사진">
+                            </div>
+                            <div class="findbox2">
+                                <p><span>[전라북도]내장산 국민여가 캠핑장</span><br><br>주소 : 전라북도 정읍시 내장산로 390
+                                <br>전화번호 : 010 - 0000 - 0000</p>
+                            </div>
+                            <div id="detail">
+                                <a href="jeolla5.html">자세히 보기</a>
+                            </div>
+                        </div>
+                        <div class="findsub findsub8">
+                            <div class="findbox1">
+                                <img src="image/jeolla/(6)main.jpg" alt="사진">
+                            </div>
+                            <div class="findbox2">
+                                <p><span>[전라남도]큐브빌리지 글램핑</span><br><br>주소 : 전라남도 강진군 대구면 청자로 1339-74
+                                <br>전화번호 : 010 - 0000 - 0000</p>
+                            </div>
+                            <div id="detail">
+                                <a href="jeolla6.html">자세히 보기</a>
+                            </div>
+                        </div>
+                        <div class="findsub findsub8">
+                            <div class="findbox1">
+                                <img src="image/jeolla/(7)main.jpg" alt="사진">
+                            </div>
+                            <div class="findbox2">
+                                <p><span>[전라남도]회산백련지 오토 캠핑장</span><br><br>주소 : 전라남도 무안군 일로읍 백련로 333
+                                <br>전화번호 : 010 - 0000 - 0000</p>
+                            </div>
+                            <div id="detail">
+                                <a href="jeolla7.html">자세히 보기</a>
+                            </div>
+                        </div>
+                        <div class="findsub findsub8">
+                            <div class="findbox1">
+                                <img src="image/jeolla/(8)main.jpg" alt="사진">
+                            </div>
+                            <div class="findbox2">
+                                <p><span>[전라남도]땅끝 오토 캠핑장</span><br><br>주소 : 전라남도 인제군 북면 백담로 128
+                                <br>전화번호 : 010 - 0000 - 0000</p>
+                            </div>
+                            <div id="detail">
+                                <a href="jeolla8.html">자세히 보기</a>
+                            </div>
+                        </div>
+                        <div class="findsub findsub8">
+                            <div class="findbox1">
+                                <img src="image/jeolla/(9)main.jpg" alt="사진">
+                            </div>
+                            <div class="findbox2">
+                                <p><span>[전라남도]편백힐 야영장</span><br><br>주소 : 전라남도 장성군 북하면 하남실길 212
+                                <br>전화번호 : 010 - 0000 - 0000</p>
+                            </div>
+                            <div id="detail">
+                                <a href="jeolla9.html">자세히 보기</a>
+                            </div>
+                        </div>
+                        <div class="findsub findsub8">
+                            <div class="findbox1">
+                                <img src="image/jeolla/(10)main.jpg" alt="사진">
+                            </div>
+                            <div class="findbox2">
+                                <p><span>[전라남도]힐링파크 캠핑장</span><br><br>주소 : 전라남도 담양군 봉산면 탄금길 9-26
+                                <br>전화번호 : 010 - 0000 - 0000</p>
+                            </div>
+                            <div id="detail">
+                                <a href="jeolla10.html">자세히 보기</a>
+                            </div>
+                        </div>
+                        <div class="findsub findsub9">
+                            <div class="findbox1">
+                                <img src="image/jeju/(1)main.jpg" alt="사진">
+                            </div>
+                            <div class="findbox2">
+                                <p><span>[제주시]골체오름캠핑장</span><br><br>주소 : 제주특별자치도 제주시 조천읍 선흘리 1858-1
+                                <br>전화번호 : 010 - 0000 - 0000</p>
+                            </div>
+                            <div id="detail">
+                                <a href="jeju1.html">자세히 보기</a>
+                            </div>
+                        </div>
+                        <div class="findsub findsub8">
+                            <div class="findbox1">
+                                <img src="image/jeju/(2)main.jpg" alt="사진">
+                            </div>
+                            <div class="findbox2">
+                                <p><span>[제주시]유수암 캠핑장</span><br><br>주소 : 제주특별자치도 제주시 애월읍 하소로 684-25
+                                <br>전화번호 : 010 - 0000 - 0000</p>
+                            </div>
+                            <div id="detail">
+                                <a href="jeju2.html">자세히 보기</a>
+                            </div>
+                        </div>
+                        <div class="findsub findsub8">
+                            <div class="findbox1">
+                                <img src="image/jeju/(3)main.jpg" alt="사진">
+                            </div>
+                            <div class="findbox2">
+                                <p><span>[제주시]숲속야영장 휴림</span><br><br>주소 : 제주도 제주시 애월읍 광령남서길 40
+                                <br>전화번호 : 010 - 0000 - 0000</p>
+                            </div>
+                            <div id="detail">
+                                <a href="jeju3.html">자세히 보기</a>
+                            </div>
+                        </div>
+                        <div class="findsub findsub8">
+                            <div class="findbox1">
+                                <img src="image/jeju/(4)main.jpg" alt="사진">
+                            </div>
+                            <div class="findbox2">
+                                <p><span>[서귀포시]제주캠핑카라반</span><br><br>주소 : 제주특별자치도 서귀포시 표선면 표선백사로 176
+                                <br>전화번호 : 010 - 0000 - 0000</p>
+                            </div>
+                            <div id="detail">
+                                <a href="jeju4.html">자세히 보기</a>
+                            </div>
+                        </div>
+                        <div class="findsub findsub8">
+                            <div class="findbox1">
+                                <img src="image/jeju/(5)main.jpg" alt="사진">
+                            </div>
+                            <div class="findbox2">
+                                <p><span>[서귀포시]원앙캠핑장</span><br><br>주소 : 제주특별자치도 서귀포시 상효동 1460
+                                <br>전화번호 : 010 - 0000 - 0000</p>
+                            </div>
+                            <div id="detail">
+                                <a href="jeju5.html">자세히 보기</a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+			</section>
+			<footer id="foot">
+				<div class="ftboxtop">
+					<div>
+						<div>
+							<p>홈</p>
+							<p>회사소개</p>
+							<p>이용 약관</p>
+							<p>파트너</p>
+							<p>자주 묻는 질문</p>
+							<p>최저가 보장제</p>
+						</div>
+						<div>
+							<img src="image/instaline.png" alt="인스타그램로고사진" usemap="#insta">
+							<map name="insta">
+								<area target="_blank" shape="rect" coords="0,0,78,78" href="https://www.instagram.com" alt="인스타그램">
+							</map>
+							<img src="image/faceline.png" alt="페이스북로고사진" usemap="#face">
+							<map name="face">
+								<area target="_blank" shape="rect" coords="0,0,78,78" href="https://www.facebook.com" alt="페이스북">
+							</map>
+							<img src="image/birdline.png" alt="트위터로고사진" usemap="#bird">
+							<map name="bird">
+								<area target="_blank" shape="rect" coords="0,0,78,78" href="https://www.twitter.com" alt="트위터">
+							</map>
+						</div>
+					</div>
+				</div>
+				<div class="ftboxmid">
+					<div>
+						<div>
+							<p>법인명(상호) 주식회사 캠프퍼니 &nbsp;&nbsp;사업자 등록번호 안내:[125-81-7597] &nbsp;&nbsp;[사업자 정보 확인]<br>전화:031-000-0000 &nbsp;&nbsp;팩스:031-000-0000 &nbsp;&nbsp;주소:서울시 성동구 왕십리로 303<br>ⓒCAMPFUNNY.com</p>
+						</div>
+						<div>
+							<img src="image/lastfoot.png" alt="홈페이지로고사진">
+						</div>
+					</div>
+				</div>
+				<div class="ftboxbot">
+					<p>ⓒ2021(주)캠프퍼니.All rights reserved</p>
+				</div>
+			</footer>
+		</div>
+	</body>
+</html>

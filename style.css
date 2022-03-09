@@ -1,0 +1,316 @@
+﻿/* 전체요소 공용 */
+* {
+	margin: 0;
+	padding: 0;
+}
+a {
+	text-decoration: none;
+	color: black;
+}
+
+body {
+	/* background-color: #FFFFD2; */
+	height: 2000px;
+}
+
+/* body태그의 큰 틀 */
+#container {
+}
+
+/* 각 페이지 */
+section {
+	overflow: hidden;
+}
+
+/* 페이지1 */
+.sec1 {
+	background-color: white;
+}
+.sec1 .text {
+	position: relative;
+	padding: 30px 20px 0px 20px;
+}
+.line {
+	height: 38px;
+	border-bottom: 0.1px dotted rgba(0,0,0,0.3);
+}
+.line p {
+	position: relative;
+	top: 13px;
+}
+.to {
+	font-weight: bolder;
+}
+.line h3 {
+	margin-left: 40px;
+	position: relative;
+	top: 7px;
+}
+.line h4 {
+	margin-left: 50px;
+	position: relative;
+	top: 10px; 
+}
+.hidden {
+	color: gray;
+	font-size: 1.1em;
+}
+.text-area {
+	position: absolute;
+	left: 50px;
+}
+.hide {
+	position: absolute;
+	width: 1280px;
+	height: 310px;
+	top: 498px;
+	background-color: white;
+	animation-name: hide;
+	animation-duration: 8.5s;
+	left: 2000px;
+}
+.typing {
+	font-family: 'Nanum Pen Script', cursive;
+	font-size: 2.2em;
+}
+
+.pen-box {
+	position: absolute;
+	top: -60px;
+	left: 710px;
+	transform: rotate(45deg);
+	animation-name: pen-move;
+	animation-duration: 4.8s;
+}
+
+/* 펜이 움직이는 애니메이션 */
+@keyframes pen-move {
+	from { top: -60px; left: 180px; }
+	5% { top: -10px; left: 206.5px; }
+	10% { top: -60px; left: 233px; }
+	15% { top: -10px; left: 259.5px; }
+	20% { top: -60px; left: 286px; }
+	25% { top: -10px; left: 312.5px; }
+	30% { top: -60px; left: 339px; }
+	35% { top: -10px; left: 365.5px; }
+	40% { top: -60px; left: 392px; }
+	45% { top: -10px; left: 418.5px; }
+	50% { top: -60px; left: 445px; }
+	55% { top: -10px; left: 471.5px; }
+	60% { top: -60px; left: 498px; }
+	65% { top: -10px; left: 524.5px; }
+	70% { top: -60px; left: 551px; }
+	75% { top: -10px; left: 577.5px; }
+	80% { top: -60px; left: 604px; }
+	85% { top: -10px; left: 630.5px; }
+	90% { top: -60px; left: 657px; }
+	95% { top: -10px; left: 683.5px; }
+	to { top: -60px; left: 710px; }
+}
+
+/* 보유 능력이 보이는 애니메이션 */
+/* '나의 기술은' 이후 텍스트에 슬라이드 박스를 이용하여 글자 나타내기 ▶ 상단 펜 이미지와 효과가 겹쳐 어수선해보임
+	삭제에 따른 주석처리 : 본문 동일
+@keyframes hide {
+	from { left: 0px; }
+	to { left: 2000px; }
+}
+*/
+
+/* 미디어쿼리 */
+/* .hidden : 보유 능력 설명 폰트 사이즈 */
+/* .pro1-box img : 설명 포스트잇 크기 */
+@media screen and (max-width : 2000px){
+	.pro1-box img { width: 490px; height: 290px; }
+}
+@media screen and (max-width : 1520px){
+	.pro1-box img { width: 460px; height: 290px; }
+}
+@media screen and (max-width : 1420px){
+	.pro1-box img { width: 430px; height: 290px; }
+}
+@media screen and (max-width : 1420px){
+	.pro1-box img { width: 430px; height: 290px; }
+}
+@media screen and (max-width : 1320px){
+	.hidden { font-size: 1em; }
+	.pro1-box img { width: 400px; height: 290px; }
+}
+@media screen and (max-width : 1210px){
+	.hidden { font-size: 0.9em; }
+	.pro1-box img { width: 370px; height: 290px; }
+}
+@media screen and (max-width : 1110px){
+	.hidden { font-size: 0.8em; }
+	.pro1-box img { width: 340px; height: 290px; }
+}
+@media screen and (max-width : 1010px){
+	.hidden { font-size: 0.75em; }
+	.pro1-box img { width: 310px; height: 290px; }
+}
+
+.guide {
+	font-family: 'Nanum Pen Script', cursive;
+	text-align: center;
+	color: #BDBDBD;
+}
+
+/* 페이지2 */
+.sec2, .sec3, .sec4 {
+	position: relative;
+}
+.sec2>img {
+	position: absolute;
+	top: 5%;
+	left: 5%;
+	z-index: -1;
+	border: 1px solid white;
+}
+.pro1-in, .pro3-in {
+	background-color: #E4E4E4;
+	width: 40%;
+	height: 88%;
+	position: relative;
+	top: 6%;
+	left: 6%;
+	border-radius: 5px;
+	opacity: 0.85;
+	border: 1px solid #E4E4E4;
+}
+.pro1-in>h2, .pro3-in>h2 {
+	text-align: center;
+	position: relative;
+	top: 3%;
+}
+.pro1-in>h3, .pro3-in>h3 {
+	text-align: left;
+	position: relative;
+	top: 8%;
+}
+.lighter {
+	font-weight: lighter;
+	font-size: 0.9em;
+}
+.code-ex {
+	position: relative;
+	top: 8%;
+}
+.github {
+	width: 250px;
+	height: 33px;
+	margin: 100px auto;
+	text-align: center;
+	background-color: white;
+	border-radius: 5px;
+	font-size: 1.3em;
+	font-weight: bolder;
+}
+.git-btn {
+}
+.pro-link {
+	width: 250px;
+	height: 33px;
+	margin: 40px auto;
+	text-align: center;
+	background-color: white;
+	border-radius: 5px;
+	font-size: 1.3em;
+	font-weight: bolder;
+}
+.pro-btn {
+	width: 100%;
+	height: 100%;
+}
+
+/* 페이지3 */
+
+.sec3>img {
+	position: absolute;
+	z-index: -1;
+	border: 1px solid white;
+}
+.pro2-in {
+	background-color: #E4E4E4;
+	width: 40%;
+	height: 72%;
+	position: relative;
+	top: 14%;
+	left: 54%;
+	border-radius: 5px;
+	opacity: 0.85;
+	border: 1px solid #E4E4E4;
+}
+.pro2-in>h2 {
+	text-align: center;
+	position: relative;
+	top: 3%;
+}
+.pro2-in>h3 {
+	text-align: left;
+	position: relative;
+	top: 8%;
+}
+.pro2 {
+	margin: 5px auto;
+}
+
+/* 페이지4 */
+.sec3>img {
+	position: absolute;
+	z-index: -1;
+	border: 1px solid white;
+}
+.pro3 {
+	margin: 5px auto;
+}
+
+/* pro1~3-in 애니메이션 추가 */
+
+.ani1 {
+	animation: slide1 1.5s ease-out;
+}
+@keyframes slide1 {
+	from {
+		left: -600px;
+		opacity: 0;
+	}
+	to {
+		opacity: 0.85;
+	}
+}
+/* 사라지는 애니메이션 추가 */
+@keyframes dis1 {
+	from {
+		opacity: 1;
+	}
+	to {
+		left: -600px;
+		opacity: 0;
+	}
+}
+
+.ani2 {
+	animation: slide2 1.5s ease-out;
+}
+@keyframes slide2 {
+	from {
+		left: 1100px;
+		opacity: 0;
+	}
+	to {
+		opacity: 0.85;
+	}
+}
+
+.ani3 {
+	animation: slide3 1.5s ease-out;
+}
+@keyframes slide3 {
+	from {
+		left: -600px;
+		opacity: 0;
+	}
+	to {
+		opacity: 0.85;
+	}
+}

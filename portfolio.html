@@ -1,0 +1,300 @@
+﻿<!doctype html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<title> 김용환 포트폴리오 </title>
+		
+		<link rel="stylesheet" href="css/style.css" type="text/css">
+		<!-- 외부 스타일 시트 사용 -->
+		
+		<script src="js/jquery.js"></script>
+		<!-- 제이쿼리 사용 -->
+		
+		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> -->
+		<!-- <script src="/path/to/parallax.js"></script> -->
+		<!-- parallax-scroll 플러그인 사용 -->
+		<!-- 출처 : https://eunyoe.tistory.com/34 -->
+		
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<!-- 구글 폰트 사용(필기체) -->
+		
+		<link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+		<!-- Nanum Pen Script -->
+		
+		<script>
+			window.onload = function() {
+				// 텍스트 타이핑 효과
+				var content = "FRONT-END 개발자를 꿈꾸는";
+				var text = document.querySelector( ".typing" );
+				var i = 0;
+				
+				text.style.fontSize = "4em";
+				
+				function typing() {
+					if ( i < content.length ) {
+						var txt = content.charAt(i);
+						text.innerHTML += txt;
+						i++;
+					}
+				};
+				setInterval(typing, 250);
+			}
+			
+			// 각 섹션 크기 설정(보이는 만큼만)
+			$(function(){
+				var s_height = $(window).height();
+				$(".sec1").css("height",s_height+"px");
+				$(".sec2").css("height",s_height+"px");
+				$(".sec3").css("height",s_height+"px");
+			});
+
+			$(document).ready(function() {
+			$(window).scroll( function(){
+				$('.pro1-box').each( function(i){
+						var bottom_of_object = $(this).offset().top + $(this).outerHeight();
+						var bottom_of_window = $(window).scrollTop() + $(window).height();
+						if( bottom_of_window > bottom_of_object/2 ){
+							$(this).animate({'opacity':'1'},2600);
+						}
+					}); 
+				});
+			});
+		
+			// btn에 호버 이벤트 추가
+			$(function(){
+				$(".pro-btn").hover(
+				function(){
+					$(this).text("새 창으로 이동합니다");
+					$(this).css("font-size","1em");
+					$(this).css("font-weight","bolder");
+					},
+				function(){
+					$(this).text("홈페이지 바로가기");
+					$(this).css("font-size","1em");
+					$(this).css("font-weight","bolder");
+					}
+				);
+			});
+			$(function(){
+				$(".git-btn").hover(
+				function(){
+					$(this).text("새 창으로 이동합니다");
+					$(this).css("font-size","1em");
+					$(this).css("font-weight","bolder");
+					},
+				function(){
+					$(this).text("홈페이지 바로가기");
+					$(this).css("font-size","1em");
+					$(this).css("font-weight","bolder");
+					}
+				);
+			});
+
+			/* 자바스크립트를 통해 스크롤 애니메이션 추가 */
+			let mainMenu1 = document.querySelector(".ani1") 
+
+			window.addEventListener('scroll', function(){
+				let value = window.scrollY;
+				console.log("scrollY", value);
+
+				/*미완성 포트폴리오*/
+			});
+		</script>
+		
+	</head>
+	<body>
+	
+		<div id="container">
+			<header>
+				<div class="info">
+				</div>
+			</header>
+			
+			<!-- 
+			내비게이션 바 / 편지 형식에 맞지 않아서 지움
+			<nav>
+				<ul class="gnb">
+					<li><a href="#page1">menu1</a></li>
+					<li><a href="#page2">menu2</a></li>
+					<li><a href="#page3">menu3</a></li>
+				</ul>
+			 </nav> 
+			 -->
+			
+			<section class="sec1">
+				<div class="text">
+					<div class="line">
+						<p class="to">신입 개발자를 찾으시는 분들께.</p>
+					</div>
+					<div class="line">
+					</div>
+					<div class="line">
+					</div>
+					<div class="line">
+					</div>
+					<div class="line">
+					</div>
+					<div class="line">
+						<span class="text-area">
+							<h2>안녕하세요.</h2>
+						</span>
+					</div>
+					<div class="line">
+						<span class="text-area">
+							<h2 class="typing"></h2>
+						</span>
+					</div>
+					<div class="line">
+					</div>
+					<div class="line">
+						<span class="text-area">
+							<h2>김용환입니다.</h2>
+						</span>
+					</div>
+					<div class="line">
+					</div>
+					<div class="line">
+					</div>
+					<div class="line">
+					</div>
+					<div class="ability">
+						<div class="line">
+							<h3>제가 보유한 기술은</h3>
+						</div>
+						<div class="line">
+							<h4>HTML5 : <span class="hidden">①메모장을 이용하여 코딩 가능 ②시멘틱 태그를 사용하여 레이아웃 제작 ③미디어쿼리를 이용한 반응형 웹페이지 제작 ④각 종 태그 사용 숙지</span></h4>
+						</div>
+						<div class="line">
+							<h4>CSS3 : <span class="hidden">①선택자를 사용한 이벤트 기능 구현 ②CSS기능만 사용하여 애니메이션 구현 ③멀티미디어, 이미지를 활용하여 페이지 구성</span></h4>
+						</div>
+						<div class="line">
+							<h4>JAVASCRIPT : <span class="hidden">①선택자를 사용하여 DOM조작 ②변수와 문법을 사용하여 알고리즘 구현 ③1차원 배열 사용 가능</span></h4>
+						</div>
+						<div class="line">
+							<h4>JQUERY : <span class="hidden">①플러그인을 사용한 페이지 제작 ②선택자를 이용하여 DOM조작 ③이벤트 기능 구현</span></h4>
+						</div>
+						<div class="line">
+							<h4>PHP : <span class="hidden">①기본 문법 숙지 ②MySQL을 통해 DB생성 가능 ③PHP 페이지 form 데이터를 전송하여 DB에 저장 가능</span></h4>
+						</div>
+						<div class="line">
+							<h4>Photo shop : <span class="hidden">①이미지 리터칭 ②글자, 이미지를 활용하여 단순한 gif 제작 ③이미지 합성</span></h4>
+						</div>
+						<div class="line">
+							<h4>Illustrator : <span class="hidden">①로고 및 단순한 일러스트 제작</span></h4>
+						</div>
+					</div>
+					<!-- 
+					<div class="hide">
+						<div class="line">
+						</div>
+						<div class="line">
+						</div>
+						<div class="line">
+						</div>
+						<div class="line">
+						</div>
+						<div class="line">
+						</div>
+						<div class="line">
+						</div>
+						<div class="line">
+						</div>
+					</div> 
+					-->
+					<div class="line">
+					</div>
+					<div class="line">
+					</div>
+					<div class="line">
+						<h2 class="guide">▼ 아래로 스크롤 해주세요</h2>
+					</div>
+					<div class="line">
+					</div>
+					<div class="line">
+					</div>
+				</div>
+				
+				<div class="pen-box">
+					<img src="img/pen.jpg" alt="펜 이미지">
+				</div>
+				
+			</section>
+			
+			<section class="sec2">
+				<img src="img/img1.jpg" alt="pro1 부연 사진" width="90%" height="90%">
+				<div class="pro1-in ani1">
+					<h2>PROJECT1 소개</h2>
+					<br>
+					<h3>목적 : <span class="lighter">L사의 TV 스펙을 나타내는 페이지</span></h3>
+					<br>
+					<h3>사용 기술 : <span class="lighter">HTML5, CSS3</span></h3>
+					<br>
+					<h3>기획 의도 : <span class="lighter">사이트 이용자가 클릭한 정보만 보여줌으로 간단한 페이지 제작</span></h3>
+					<br>
+					<div class="code-ex">
+						<h3>저의 코드는!</h3>
+						<br>
+						<div class="github">
+							<a href="https://github.com/kimyonghwan1994/portfolio" target="_blank" class="git-btn">github 이동하기</a>
+						</div>
+						<div class="pro-link">
+							<a href="project1.html" target="_blank" class="pro-btn">홈페이지 바로가기</a>
+						</div>
+					</div>
+				</div>
+				
+			</section>
+			
+			<section class="sec3">
+				<img src="img/img2.jpg" alt="pro2 부연 사진" width="100%" height="100%">
+				<div class="pro2-in ani2">
+					<h2>PROJECT2 소개</h2>
+					<br>
+					<h3>목적 : <span class="lighter">캠핑장 정보를 알려주는 페이지(시중 'GO캠핑' 리뉴얼)</span></h3>
+					<br>
+					<h3>사용 기술 : <span class="lighter">HTML5, CSS3, JS, JQuery</span></h3>
+					<br>
+					<h3>기획 의도 : <span class="lighter">서버를 이용하지 않고 전 국에 있는 캠핑장 정보를 담을 수 있는 페이지 제작</span></h3>
+					<div class="code-ex">
+						<h3>저의 코드는!</h3>
+						<br>
+						<div class="github">
+							<a href="https://github.com/kimyonghwan1994/portfolio" target="_blank" class="git-btn">github 이동하기</a>
+						</div>
+						<div class="pro-link pro2">
+							<a href="project2.html" target="_blank" class="pro-btn">홈페이지 바로가기</a>
+						</div>
+					</div>
+				</div>
+			</section>
+			
+			<section class="sec2">
+				<img src="img/img3.jpg" alt="pro3 부연 사진" width="90%" height="90%">
+				<!-- https://www.hankookilbo.com/News/Read/A2020071214370003167 한국일보 기사 페이지에서 가져온 이미지입니다. -->
+				<div class="pro3-in ani3">
+					<h2>PROJECT3 소개</h2>
+					<br>
+					<h3>목적 : <span class="lighter">실제 판결이 난 재판을 사용자가 직접 판결해보는 페이지</span></h3>
+					<br>
+					<h3>사용 기술 : <span class="lighter">HTML5, CSS3, JS, JQuery, Photoshop, illustrator</span></h3>
+					<br>
+					<h3>기획 의도 : <span class="lighter">사이트 이용자에게 생소할 수 있는 법률용어를 설명해주고 판결문을 바탕으로 직접 재판할 기회를 주는 페이지 제작</span></h3>
+					<br>
+					<div class="code-ex">
+						<h3>저의 코드는!</h3>
+						<br>
+						<div class="github">
+							<a href="https://github.com/kimyonghwan1994/portfolio" target="_blank" class="git-btn">github 이동하기</a>
+						</div>
+						<div class="pro-link  pro3">
+							<a href="project3.html" target="_blank" class="pro-btn">홈페이지 바로가기</a>
+						</div>
+					</div>
+				</div>
+				
+			</section>
+		</div>
+	</body>
+</html>

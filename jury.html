@@ -1,0 +1,822 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<title> jury.html </title>
+		<script src="js/jquery.js"></script>
+		<script>
+			window.onload = function() {
+			
+				// 오늘 날짜
+				var today = new Date();
+				var year = today.getFullYear();
+				var month = today.getMonth() + 1;
+				var days = today.getDate();
+			
+				console.log(year, month, days)
+			
+				$(".n_date").text( year + "/" + month + "/" + days);
+					
+				// 현재 시간
+				setClock();
+				var clock = setInterval(function() {
+					setClock();
+					}, 1000);	
+				function setClock() {
+					var date = new Date();
+					var minutes = date.getMinutes();
+					
+					var dateText = date.getHours() + ':' + String(minutes).padStart( 2 , "0");
+					document.querySelector(".n_time").innerHTML = dateText;
+				};
+				
+				// nav 이벤트 추가
+				$(function(){
+					$("nav a").eq(0).mouseover(function(){
+						$(".t-box1").css("background-color","#EAEAEA");
+						$(".t-box1").css("font-weight","bolder");
+						$(".c-box1").css("opacity","1");
+						});
+					$("nav a").eq(0).mouseout(function(){
+						$(".t-box1").css("background-color","white");
+						$(".t-box1").css("font-weight","normal");
+						$(".c-box1").css("opacity","0.7");
+						});
+					$("nav a").eq(1).mouseover(function(){
+						$(".t-box2").css("background-color","#EAEAEA");
+						$(".t-box2").css("font-weight","bolder");
+						$(".c-box2").css("opacity","1");
+						});
+					$("nav a").eq(1).mouseout(function(){
+						$(".t-box2").css("background-color","white");
+						$(".t-box2").css("font-weight","normal");
+						$(".c-box2").css("opacity","0.7");
+						});
+					$("nav a").eq(2).mouseover(function(){
+						$(".t-box3").css("background-color","#EAEAEA");
+						$(".t-box3").css("font-weight","bolder");
+						$(".c-box3").css("opacity","1");
+						});
+					$("nav a").eq(2).mouseout(function(){
+						$(".t-box3").css("background-color","white");
+						$(".t-box3").css("font-weight","normal");
+						$(".c-box3").css("opacity","0.7");
+						});
+					$("nav a").eq(3).mouseover(function(){
+						$(".t-box4 p").text("맨 위로 올라가기");
+						});
+					$("nav a").eq(3).mouseout(function(){
+						$(".t-box4 p").text("국민참여재판이란?");
+						});
+				});
+				
+				// .vector에 클릭 이벤트를 추가하여 .foldbox 나타내기
+				var vector = document.querySelector(".vector");
+				var foldbox = document.querySelector(".foldbox");
+				var down = document.querySelector("#down");
+
+				var flag = true;
+				
+				vector.onclick = function() {
+					if ( flag ) {
+						flag = false;
+						down();
+					}
+					else {
+						flag = true;
+						up();
+					}
+
+					function down() {
+						var foldbox = document.querySelector(".foldbox");
+						var down = document.querySelector("#down");
+						event.preventDefault();
+						
+						foldbox.style.display = "block";
+						down.innerHTML = "▲"
+					}
+					function up() {
+						var foldbox = document.querySelector(".foldbox");
+						var down = document.querySelector("#down");
+						event.preventDefault();
+						
+						foldbox.style.display = "none";
+						down.innerHTML = "▼"
+					};
+				};
+				
+				// (간단하게 보기)
+				var vector2 = document.querySelector(".vector2");
+				var vector3 = document.querySelector(".vector3");
+
+				var flag = true;
+				
+				vector2.onclick = function() {
+					if ( flag ) {
+						flag = false;
+						down();
+					}
+					else {
+						flag = true;
+						up();
+					}
+
+					function down() {
+						var vector2 = document.querySelector(".vector2");
+						var part2 = document.querySelector(".part2");
+						var part2img = document.querySelector(".part2img");
+						event.preventDefault();
+						
+						part2.style.display = "none";
+						part2img.style.display = "block";
+					}
+					function up() {
+						var vector2 = document.querySelector(".vector2");
+						var part2 = document.querySelector(".part2");
+						var part2img = document.querySelector(".part2img");
+						event.preventDefault();
+						
+						part2.style.display = "block";
+						part2img.style.display = "none";
+					};
+				};
+				
+				// (간단하게 보기)
+				vector3.onclick = function() {
+					if ( flag ) {
+						flag = false;
+						down1();
+					}
+					else {
+						flag = true;
+						up1();
+					}
+
+					function down1() {
+						var part3 = document.querySelector(".part3");
+						var part3img = document.querySelector(".part3img");
+						var changebox = document.querySelector(".change-box");
+						event.preventDefault();
+						
+						part3img.style.display = "block";
+						changebox.style.display = "none";
+					}
+					function up1() {
+						var part3 = document.querySelector(".part3");
+						var part3img = document.querySelector(".part3img");
+						var changebox = document.querySelector(".change-box");
+						event.preventDefault();
+						
+						part3img.style.display = "none";
+						changebox.style.display = "block";
+					};
+				};
+				
+				// 본문과 주석이 선택되었을 때 나타나는 이벤트 추가하기 ( background-color )
+				$(function(){
+					$(".pre1").click(function(){
+						$(this).css("background-color","yellow");
+						$(".pr1").css("background-color","yellow");
+					});
+					$(".pre2").click(function(){
+						$(this).css("background-color","yellow");
+						$(".pr2").css("background-color","yellow");
+					});
+					$(".pre3").click(function(){
+						$(this).css("background-color","yellow");
+						$(".pr3").css("background-color","yellow");
+					});
+					$(".pre4").click(function(){
+						$(this).css("background-color","yellow");
+						$(".pr4").css("background-color","yellow");
+					});
+					$(".pre5").click(function(){
+						$(this).css("background-color","yellow");
+						$(".pr5").css("background-color","yellow");
+					});
+					$(".pre6").click(function(){
+						$(this).css("background-color","yellow");
+						$(".pr6").css("background-color","yellow");
+					});
+					$(".pre7").click(function(){
+						$(this).css("background-color","yellow");
+						$(".pr7").css("background-color","yellow");
+					});
+					$(".pre8").click(function(){
+						$(this).css("background-color","yellow");
+						$(".pr8").css("background-color","yellow");
+					});
+					$(".pre9").click(function(){
+						$(this).css("background-color","yellow");
+						$(".pr9").css("background-color","yellow");
+					});
+					
+				}); 
+				
+			};
+		</script>
+		
+		<style>
+/* ▼ 전체 설정 초기화 */
+			* {
+				box-sizing: border-box;
+				}
+			html,body {
+				width: 100%;
+				height: 2430px;
+				margin: 0;
+				padding: 0;
+				background : linear-gradient( to top,#FFFFDB,#FFFFE4,#FFFFE4,#FFFFF6,white);
+				text-align: justify;
+				}
+				
+/* ▼ 날짜, 시간 박스 */				
+			#time_box {
+				width: 180px;
+				height: 50px;
+				margin: 0;
+				position: absolute;
+				position: fixed;
+				left: 80%;
+				display: flex;
+				margin: 20px auto 0 auto;
+				}
+			#time_box p {
+				font-size: 1.35em;
+				}
+			#time_box p:nth-child(2) {
+				margin-left: 15px;
+				}
+
+/* ▼ nav */
+			nav {
+				width: 200px;
+				margin: 0;
+				position: absolute;
+				top: 10%;
+				left: 80%;
+				position: fixed;
+				}
+			.page1, .page2, .page3, .page4 {
+				width: 180px;
+				height: 50px;
+				display: flex;
+				margin-bottom: 5px;
+				color: black;
+				}
+			/*페이지에 맞춰 바꿔야 할 속성*/
+			.page4 {
+				background-color: #EAEAEA;
+				font-weight: bolder;
+				opacity: 1;
+				}
+			.t-box1, .t-box2, .t-box3 {
+				width: 80%;
+				height: 100%;
+				background: white;
+				}	
+			/*페이지에 맞춰 바꿔야 할 속성*/
+			 .t-box4 {
+				width: 80%;
+				height: 100%;
+				}
+			.t-box1 p, .t-box2 p, .t-box3 p {
+				position: relative;
+				top: -7px;
+				font-size: 1.2em;
+				}
+			.t-box4 p {
+				position: relative;
+				top: -2px;
+				font-size: 1em;
+				}
+			.c-box1, .c-box2, .c-box3, .c-box4 {
+				width: 20%;
+				height: 100%;
+				}
+			.c-box1 {
+				background-color: #484848;
+				opacity: 0.7;
+				}
+			.c-box2 {
+				background-color: #FF4848;
+				opacity: 0.7;
+				}
+			.c-box3 {
+				background-color: #4948FF;
+				opacity: 0.7;
+				}
+			.c-box4 {
+				background-color: #65FF5E;
+				opacity: 0.7;
+				}
+				
+/* 미디어 쿼리를 이용하여 1200px 기준 맞추기 */
+			@media screen and (max-width : 2000px) {
+			
+/* ▼ #container 공통적으로 해당하는 부분 */
+			#container {
+				width: 60%;
+				height: 2430px;
+				margin: 0 auto;
+				border-left: 0.5px dotted black;
+				border-right: 0.5px dotted black;
+				padding: 0px 10px;
+				overflow: hidden;
+				}
+			a:link, a:visited {
+				text-decoration: none;
+				color: blue;
+				}
+			h1 {
+				width: 400px;
+				font-size: 1.3em;
+				margin-top: 1px;
+				}
+			.bottom {
+				border-bottom: 1px dotted red;
+				padding-bottom: 2px;
+				}
+			.small {
+				font-size: 0.9em;
+				}
+			ol li, ul li {
+				margin: 7px 0;
+				font-size: 0.9em;
+				}
+			ol, ul {
+				width: 90%;
+				border: 1px solid black;
+				margin: 0 auto;
+				padding-right: 5px;
+				}
+				
+
+/* ▼ section태그 공통 */
+			section p {
+				font-size: 0.9em;
+				}
+			article hr {
+				width: 100px;
+				margin: 0;
+				border: 2px solid gray;
+				position: relative;
+				}
+				
+/* ▼ article */
+			.vector { /* foldbox 열고 닫는 매개체 */
+				width: 270px;
+				display: flex;
+				margin-left: 43px;
+				}
+			.vector a {
+				color black;
+				}
+			.difi { /* 차이점 강조 */
+				color: red;
+				}
+			.over { /* 용어설명 강조 */
+				}
+			#down { /* 아래, 위 화살표 조정 */
+				margin-top: 13px;
+				margin-left: 10px;
+				}
+			.foldbox {
+				background-color :#F8FFFF;
+				border-radius: 20px;
+				margin-right : 10px;
+				padding: 5px;
+				display: none;
+				border: 2px dashed black;
+				}
+			.middle {
+				position: relative;
+				}
+			/* part2img 열고 닫는 매개체(간단하게 보기) */
+			.vector2 { 
+				width: 140px;
+				position: relative;
+				top: -45px;
+				left: 350px;
+				}
+			.part2 {
+				width: 100%;
+				margin-top: -30px;
+				}
+			.part2img {
+				width: 90%;
+				height: 300px;
+				background-color: #F8FFFF;
+				text-align: center;
+				position: relative;
+				display: none;
+				margin: -30px auto 0px auto;
+				border-radius: 20px;
+				border: 2px dashed black;
+				}
+			.part2img>div {
+				float: left;
+				}
+			.part2img>div:after {
+				content: "";
+				display: block;
+				clear: both;
+				}
+			.box1, .right1, .box2, .right2, .box3 {
+				width: 20%;
+				height: 100%;
+				padding: auto 0;
+				}
+			.box1-1, .box2-1, .box3-1	{
+				border: 3px solid black;
+				text-align: center;
+				border-radius: 10px;
+				margin: 100px auto 0px auto;
+				}
+			.box1-1 {
+				width: 100px;
+				height: 50px;
+				margin-top: 100px;
+				}
+			.box1-1 p {
+				font-weight: bolder;
+				}
+			.right1-1 {
+				font-size: 2.5em;
+				margin: 100px auto 0px auto;
+				}
+			.right1 p {
+				margin-top: -80px;
+				}
+			.box2-1 {
+				width: 100px;
+				height: 50px;
+				}
+			.box2-1 p {
+				margin-top: 2px;
+				font-weight: bolder;
+				}
+			.right2-1 {
+				font-size: 2.5em;
+				margin: 100px auto 0px auto;
+				}
+			.right2 p {
+				margin-top: -100px;
+				}
+			.box3-1 {
+				width: 100px;
+				height: 50px;
+				}
+			.box3-1 p {
+				margin-top: 2px;
+				font-weight: bolder;
+				}
+			/* part3img 열고 닫는 매개체(간단하게 보기) */	
+			.vector3 { 
+				width: 140px;
+				position: relative;
+				top: -45px;
+				left: 200px;
+				}
+			.part3 {
+				width: 100%;
+				margin-top: -30px;
+				}
+			.part3img {
+				width: 100%;
+				height: 330px;
+				background-color: #F8FFFF;
+				text-align: center;
+				position: relative;
+				border-radius: 20px;
+				border: 2px dashed black;
+				display: none;
+				}
+			.part3img>div {
+				float: left;
+				}
+			.part3img>div:after {
+				content: "";
+				display: block;
+				clear: both;
+				}
+			.box4, .box5, .box6 {
+				width: 20%;
+				height: 100%;
+				padding: auto 0;
+				}
+			 .right3, .right4 {
+				width: 20%;
+				}
+			.box4-1, .box5-1, .box6-1	{
+				border: 3px solid black;
+				text-align: center;
+				border-radius: 10px;
+				margin: 100px auto 0px auto;
+				font-weight: bolder;
+				}
+			.right3-1 {
+				font-size: 2.5em;
+				margin: 110px auto 0px auto;
+				}
+			.right3 p {
+				margin-top: -110px;
+				}
+			.right4-1 {
+				font-size: 2.5em;
+				margin: 110px auto 0px auto;
+				}
+				
+/* ▼ footer */
+			footer {
+				width: 100%;
+				height: 10%;
+				}
+			footer p {
+				font-size: 0.75em;
+				margin: 0;
+				font-weight: bolder;
+				}
+			footer sub {
+				font-size: 0.5em;
+				}
+				
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div id="next-page">
+				<div class="left-page">
+				</div>
+				<div class="right-page">
+				</div>
+			</div>
+		<header>
+			<div id="time_box">
+				<p class="n_date"></p>
+				<p class="n_time"></p>
+			</div>
+		</header>
+		<nav>
+			<a href="project3.html" id="page-move">
+				<div class="page1" id="nav1">
+					<div class="t-box1">
+						<p>홈으로 돌아가기</p>
+					</div>
+					<div class="c-box1"></div>
+				</div>
+			</a>
+			
+			<a href="word.html">
+				<div class="page2" id="nav2">
+					<div class="t-box2">
+						<p>법률용어 알기</p>
+					</div>
+					<div class="c-box2"></div>
+				</div>
+			</a>
+			
+			<a href="trial.html">
+				<div class="page3" id="nav3">
+					<div class="t-box3">
+						<p>재판 해보기</p>
+					</div>
+					<div class="c-box3"></div>
+				</div>
+			</a>
+			
+			<a href="#">
+				<div class="page4" id="nav4">
+					<div class="t-box4">
+						<p>국민참여재판이란?</p>
+					</div>
+					<div class="c-box4"></div>
+				</div>
+			</a>
+		</nav>
+		<div id="container">
+			<section>
+				<article class="start">
+					<hr>
+					<h1>국민참여재판이란?</h1>
+					<p>
+						「국민의 형사재판 참여에 관한 법률」<span class="pre1"><a href="#1pre" id="1body">(법률 제8495호)<sup>1)</sup></a></span>에 따라 2008.1.1부터 <br><span class="bottom">일반 국민이 배심원으로 형사재판에 참여</span>하는 형사재판제도입니다.
+					</p>
+					
+					<br>
+					
+					<hr>
+					<h1>배심원의 역할은?</h1>
+					<p>
+						재판부가 형(형벌)을 선고할 수 있게 법정에서 공방을 지켜본 후 <br>
+						<span class="bottom">피고인의 유·무죄에 관한 <span class="pre2"><a href="#2pre" id="2body">평결<sup>2)</sup></a></span>을 내리고 그에 적절한 형을 토의하여 재판부에 전달하는 역할이 있습니다.</span>
+					</p>
+					
+					<br>
+		
+					<hr>
+					<h1>국민참여재판 제도의 특징</h1>
+					<ol>
+						<li> <b class="over">배심제</b>와 <b class="over">참심제</b> 중 어느 한 제도를 그대로 도입하지 않고 양 제도를 혼합하여 수정한 또 다른 형태의 제도</li>
+						<li> 만장일치가 아닌 경우, 판사의 의견을 듣고 다수결로 평결할 수 있다. <span class="difi">(배심제와 다른 점)</span></li>
+						<li> <span class="pre3"><a href="#3pre" id="3body">심리<sup>3)</sup></a></span>에 관여한 판사에게 <span class="pre4"><a href="#4pre" id="4body">양형<sup>4)</sup></a></span>에 관한 의견을 밝힐 수 있다. <span class="difi">(참심제와 다른 점)</span></li>
+						<li> 배심원의 평결은 재판에 직접적인 효력은 없는 것이 원칙이나 실직적으로 존중받는 특징이 있습니다.</li>
+					</ol>
+					<div class="vector">
+						<a href="#"><p>배심제와 참심제가 궁금하다면?(클릭)</p></a><span id="down">▼</span>
+					</div>
+					<div class="foldbox">
+						<p>
+							<b>Q1. 국민참여재판에도 배심원이 있는데 배심원 제도라고 따로 있는 건가요?</b><br>
+							<span class="small">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp→ 네, 따로 있습니다. 우리나라는 배심원 제도(=배심제도)에서 배심원의 특징만 가져와 수정한 별도의 제도입니다.</span>
+							<br>
+							<br>
+							<b class="over">배심원 제도</b>는 <br>일반 국민으로 구성된 배심원이 재판에 참여하여 <span class="bottom">직업법관(판사)로부터 독립하여 평결을 내리고 법관은 그 평결에 따르는 제도로
+							배심원의 의견이 만장일치가 되어야 하는 특징</span>이 있습니다.<br>미국, 영국 등에서 시행되고 있습니다.<br>
+							<br>
+							<b class="over">참심원 제도</b>는 <br>일반 국민인 참심원이 직업법관과 함께 재판부의 일원으로 참여하여 <span class="bottom">직업법관과 동등한 권한을 가지고 심리 과정에도 참여하는 제도입니다.</span><br>독일, 프랑스 등에서 시행되고 있습니다.
+						</p>
+					</div>
+					
+					<br>
+				</article>
+				
+				<article class="middle">
+					<hr>
+					<h1>국민참여재판으로 진행되는 사건은?</h1>
+					<div class="vector2">
+						<a href="#"><p>(간단하게 보기)</p></a>
+					</div>
+						
+					<div class="part2">
+						<ul>
+							<li><span class="pre5"><span class="bottom"><a href="#5pre" id="5body">합의부<sup>5)</sup></a></span></span> 관할사건을 대상사건</span>으로 합니다.</li>
+							<li>법원은 대상사건에 대해 <span class="pre6"><a href="#6pre" id="6body">공소<sup>6)</sup></a></span>가 제기되면 <span class="pre7"><a href="#7pre" id="7body">피고인<sup>7)</sup></a></span> 또는 변호인에게 공소장 부본과 함께 국민참여재판 안내서, 국민참여재판 의사확인서를 송달합니다.</li>
+							<li>
+								국민참여재판을 원하는 피고인은 공소장 부본을 송달받은 날로부터 7일 이내에 국민참여재판을 원하는 의사를 기재한 서면을 법원에 제출하여야 합니다.<br>
+								단, 위 기간이 지난 후에도 희망의사가 있다면 제1회 <span class="pre8"><a href="#8pre" id="8body">공판기일<sup>8)</sup></a></span> 전에 서류를 제출할 수 있습니다.
+							</li>
+							<li>
+								국민참여재판 의사확인서가 제출되면 국민참여재판을 진행하되, <span class="bottom">배심원의 안전에 대한 우려가 있는 등 진행하기에 적당하지 않은 사건에 대해서는 검사·피고인 또는 변호사의 의견을 들어 국민참여재판을 하지 않기로 하는 배제결정</span>을 할 수 있습니다.
+							</li>
+							<li>
+								국민참여재판은 지방법원 본원 합의부에서 진행되므로, 지방법원 지원에 대상사건으로 공소가 제기되어 피고인이 국민참여재판을 희망하는 경우에는 국민참여재판 회부결정을 하여 지방법원 본원 합의부로 이송하여 진행됩니다.
+							</li>
+						</ul>
+					</div>
+					<div class="part2img">
+					
+						<div class="box1">
+							<div class="box1-1">
+								<p>합의부 사건</p>
+							</div>
+							<p>3인 이상 법관이<br>  참여하는 재판<br>( =죄질이 무거움)</p>
+						</div>
+						
+						<div class="right1">
+							<div class="right1-1">
+								→
+							</div>
+							<p>공소가 제기되면</p>
+						</div>
+						
+						<div class="box2">
+							<div class="box2-1">
+								<p>법원이<br>변호인에게</p>
+							</div>
+							<p>① 국민참여재판<br>안내서<br>② 국민참여재판<br>의사 확인서</p>
+						</div>
+						
+						<div class="right2">
+							<div class="right2-1">
+								→
+							</div>
+							<p>7일 이내에<br>①②를 작성하여<br>법원에 제출</p>
+						</div>
+						
+						<div class="box3">
+							<div class="box3-1">
+								<p>국민참여재판<br>진행</p>
+							</div>
+							<p>예외로<br>번복하는<br><span class="bottom">배제결정도 있음</span></p>
+						</div>
+					</div>
+					
+					<br>
+					
+					<hr>
+					<h1>배심원 선정절차는?</h1>
+					<div class="vector3">
+						<a href="#"><p class="">(간단하게 보기)</p></a>
+					</div>
+					
+					<div class="part3">
+						<div class="change-box">
+							<p>
+								각급 법원별로 작성된 배심원후보예정자명부로부터 일정 수의 배심원 후보자를 무작위로 추출하여 선정기일을 통지한 후 법원에 출석한 배심원 후보자에게 질문함으로 자격을 확인하고 공정하게 판단할 수 있는지를 판단하여 배심원과 예비배심원을 선정하는 절차입니다.
+							</p>
+							
+							
+							<hr>
+							<h1>선정 절차는 어떻게 구성되어 있나요?</h1>
+							<ol>
+								<li>법원이 국민참여재판에 필요한 배심원을 선정하기 위하여 배심원 후보자를 무작위로 뽑아 <span class="pre9"><a href="#9pre" id="9body">선정기일<sup>9)</sup></a></span> 3~4주 전에 선정기일 통지서를 보냅니다.</li>
+								<li>배심원 후보자는 선정기일 통지서와 함께 송달된 질문표에 사실대로 답하여 법원에 제출합니다. 이 때, 부득이한 사정 없이는 신분증을 지참하여야 하고 배심원 선정기일 시작 20~30분 전에 법원에 출석하셔야 합니다.</li>
+								<li>판사, 검사, 변호인은 배심원 후보자에게 사건을 공정하게 평결할 자격을 갖추고 있는지 확인하기 위한 질문을 하면 후보자는 진실한 답변만을 하면 됩니다.<br>
+								이 과정에서 배심원·예비배심원이 선정되며 해당 재판에 직·간접적으로 관여된 사람은 후보자에서 배제될 수 있습니다.
+							</ol>
+						</div>
+					</div>
+					<div class="part3img">
+						<div class="box4">
+							<div class="box4-1">
+								<p>법원에서<br>'배심원후보예정자명부'를 통해<br>무작위 추첨</p>
+							</div>
+						</div>
+						
+						<div class="right3">
+							<div class="right3-1">
+								→
+							</div>
+							<p>선정기일<br>통지<br>( =법원출석날짜)</p>
+						</div>
+						
+						<div class="box5">
+							<div class="box5-1">
+								<p>후보자가<br>선정기일에<br>법원에 참석</p>
+							</div>
+							<p>① 선정기일 통지서<br>② 질문표<br>③ 신분증<br>지참</p>
+						</div>
+						
+						<div class="right4">
+							<div class="right4-1">
+								→
+							</div>
+						</div>
+						
+						<div class="box6">
+							<div class="box6-1">
+								<p>판사,검사,변호인의<br>질문을 통해 배심원 선정</p>
+							</div>
+							<p><span class="bottom">해당 재판에 직·간접적으로 관여된 사람은 자동으로 후보자에서 배제됨.</span></p>
+						</div>
+					</div>
+					
+					<br>
+					
+				</article>
+				
+				<article class="close">
+					<br>
+					<hr>
+					<h1>배심원이 알아야 할 유용한 정보</h1>
+					<h2>자격</h2>
+					<p>
+						만 20세 이상 대한민국 국민이면 누구나 배심원이 될 수 있습니다. 다만, 배심원은 공무를 수행하여야 하므로 일정한 범죄 전력이 있으면 자동으로 결격될 수 있고, 건강악화 등 법원에 참여할 수 없는 부득이한 사정이 있는 때에는 <span class="bottom">법원에 '배심원 직무 면제'를 신청할 수 있습니다.</span>
+					</p>
+					<h2>일당</h2>
+					<p>
+						배심원에게는 재판 하루당 12만원의 일당이 지급됩니다. 선정기일에 출석한 배심원후보자는 배심원으로 선정되지 않아도 6만원의 일당이 지급됩니다.
+					</p>
+					<h2>재판기간</h2>
+					<p>
+						국민참여재판으로 진행되는 재판은 원칙적으로 매일 재판을 진행하여 1~3일 안에 재판을 마치도록 운영합니다.
+					</p>
+					<h2>신변보호</h2>
+					<p>
+						배심원후보자에 관한 신상정보는 일절 공개되지 않습니다.<br>
+						법정에서는 배심원의 성명 대신 법원이 부여한 번호로만 부르도록 되어 있습니다.<br>
+						누가 배심원으로 참여하였는지도 본인의 동의 없이는 공개되지 않습니다.
+					</p>
+					<h2>배심원 직무 수행 보장</h2>
+					<p>
+						「국민의 형사재판 참여에 관한 법률」제50조에서는 "누구든지 배심원·예비배심원 또는 배심원후보자인 사실을 이유로 해고하거나 그 밖의 불이익한 처우를 하여서는 아니 된다"고 규정하고 있습니다.<br>
+						배심원후보자로 선정이 되면 국민의 의무이행으로 당연한 것으로 받아들이고 법원 출석을 보장하는 고용주의 이해와 협조가 무엇보다 중요할 것입니다.
+					</p>
+					<h1>배심원 선정 사칭 보이스 피싱 주의</h1>
+					<p>
+						법원에서는 배심원 선정과 관련하여 전화, ARS 등으로 개인 정보를 묻거나 과태료를 부과하고 계좌로 납부하라는 안내를 하지 않습니다.<br>
+						여러분께서는 배심원 선정을 사칭한 범죄피해를 입지 않도록 주의하시고, 이러한 범죄 시도를 접하는 때에는 즉시 수사기관에 신고하시기 바랍니다.
+					</p>
+				</article>
+			</section>
+			<!-- 주석 표시를 위한 푸터 -->
+			<footer>
+				<hr>
+				<br>
+				<p><span class="pr1">1) 법률 제○○○○호?: 법률이 제정된 날짜로부터 개정된 횟수를 의미한다.</span> <sub><a href="#1body" id="1pre">(본문으로)</a></sub></p>
+				<p><span class="pr2">2) 평결이란? : 평가하여 결정하다의 준말</span> <sub><a href="#2body" id="2pre">(본문으로)</a></sub></p>
+				<p><span class="pr3">3) 심리란? : 사실관계 및 법률관게 확인 절차</span> <sub><a href="#3body" id="3pre" class="pre">(본문으로)</a></sub></p>
+				<p><span class="pr4">4) 양형이란? : 형벌의 정도를 정하는 일.</span> <sub><a href="#4body" id="4pre" class="pre">(본문으로)</a></sub></p>
+				<p><span class="pr5">5) 합의부란? : 재판장을 포함한 법관 세 명 이상이 참여하는 재판. (간단하게 중한 사건에 대한 재판)</span><sub><a href="#5body" id="5pre">(본문으로)</a></sub></p>
+				<p><span class="pr6">6) 공소란? : 검사가 법원에 재판을 청구함. 또는 그런 일.</span> <sub><a href="#6body" id="6pre">(본문으로)</a></sub></p>
+				<p><span class="pr7">7) 피고인이란? : 형사 소송에서, 검사에 의하여 형사 책임을 져야 할 자로 공소 제기를 받은 사람.</span>(↔민사 소송에서의 '피고'랑은 다르다.) <sub><a href="#7body" id="7pre">(본문으로)</a></sub></p>
+				<p><span class="pr8">8) 공판기일이란? : 재판부에서 피고인의 유·무죄를 판단하는 절차.</span> <sub><a href="#8body" id="8pre">(본문으로)</a></sub></p>
+				<p><span class="pr9">9) 선정기일이란? : 배심원을 선정하기 위한 날짜. 법원으로부터 송달 받은 문서를 가지고 법원에 참석하여야 한다.</span> <sub><a href="#9body" id="9pre">(본문으로)</a></sub></p>
+			</footer>
+			
+		</div>
+	</body>
+</html>

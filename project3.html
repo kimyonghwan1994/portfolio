@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<title> main.html </title>
+		<script src="js/jquery.js"></script>
+		<script>
+			// .menu a id에 mouseover 이벤트 추가
+			window.onload = function() {
+              var li1 = document.querySelector("#word");
+              var li2 = document.querySelector("#trial");
+			  var p2 = document.querySelector(".hide1");
+              var li3 = document.querySelector("#jury");
+			  var p3 = document.querySelector(".hide2");
+
+              li1.addEventListener("mouseover",over1);
+              li1.addEventListener("mouseout",out1);
+			  li2.addEventListener("mouseover",over2);
+              li2.addEventListener("mouseout",out2);
+			  li3.addEventListener("mouseover",over3);
+              li3.addEventListener("mouseout",out3);
+			  
+				// #word
+				function over1() {
+					li1.style.fontWeight = "bolder";
+				}
+				function out1() {
+					li1.style.fontWeight = "";
+				}
+				// #trial
+				function over2() {
+					li2.style.fontWeight = "bolder";
+					p2.style.display = "block";
+				}
+				function out2() {
+					li2.style.fontWeight = "";
+					p2.style.display = "none";
+				}
+				// #jury
+				function over3() {
+					li3.style.fontWeight = "bolder";
+					p3.style.display = "block";
+				}
+				function out3() {
+					li3.style.fontWeight = "";
+					p3.style.display = "none";
+				}
+				
+				// 오늘 날짜
+				var today = new Date();
+				var year = today.getFullYear();
+				var month = today.getMonth() + 1;
+				var days = today.getDate();
+			
+				console.log(year, month, days)
+			
+				$(".n_date").text( year + "/" + String(month).padStart( 2 , "0") + "/" + String(days).padStart( 2 , "0") );
+					
+				// 현재 시간
+				setClock();
+				var clock = setInterval(function() {
+					setClock();
+					}, 1000);	
+				function setClock() {
+					var date = new Date();
+					var hours = date.getHours();
+					var minutes = date.getMinutes();
+					var seconds = date.getSeconds();
+					
+					var dateText = (String(hours).padStart( 2 , "0")) + ' : ' + (String(minutes).padStart( 2 , "0")) + ' : ' + (String(seconds).padStart( 2 , "0")) /*+ '초 입니다.'*/;
+					document.querySelector(".n_time").innerHTML = dateText;
+				}
+				
+				// 책이 넘어가는 듯한 애니메이션
+				/*
+				$("#word").click(function(){
+						$(".n_date").css("display","none");
+						$(".n_time").css("display","none");
+						$(".main_logo").animate( {
+							left: "25%"
+							}, 1500);
+						return false;
+					});
+				*/	
+			}
+			
+		</script>
+
+		<style>
+/* ▼ 전체 설정 초기화 */
+			* {
+				box-sizing: border-box;
+				margin: 0;
+				padding: 0;
+				}
+			html, body {
+				width: 100%;
+				height: 100%;
+				}
+			#container {
+				width: 100%;
+				height: 100vh;
+				background : linear-gradient( to top,#D3F3FA,#E6FFFF,#F8FFFF,white);
+				overflow: hidden;
+				border: 1px solid black;
+				}
+				
+/* ▼ 법전 이미지 박스 설정 */				
+			.main_logo {
+				width: 485px;
+				height: 595px;
+				margin: 0 auto;
+				background-image: url(image/law.jpg);
+				background-size: 385px 495px;
+				background-repeat: no-repeat;
+				opacity: 0.9;
+				position: relative;
+				top: 40%;
+				left: 2%;
+				}
+				
+/* ▼ 메뉴 설정 */
+			.menu {
+				width: 690px;
+				/*border: 1px solid black;*/
+				display: flex;
+				list-style-type: none;
+				margin: 0 auto;
+				z-index: 99;
+				margin-top: -310px;
+				}
+			.menu a {
+				text-decoration: none;
+				color: black;
+				}
+			.menu a li {
+				width: 240px;
+				height: 70px;
+				text-align: center;
+				font-size: 1.5em;
+				border-bottom: 1px solid gray;
+				}
+			#word {
+				height: 50px;
+				border-right: 1px dotted black;
+				}
+			#trial {
+				height: 50px;
+				border-right: 1px dotted black;
+				}
+			#jury {
+				
+				}
+			.hide1, .hide2 {
+				margin-top: 10px;
+				font-size: 0.55em;
+				display: none;
+				}
+				
+/* ▼ 현재 날짜 박스 */
+			#time_box {
+				width: 300px;
+				height: 70px;
+				position: relative;
+				margin: 0 auto;
+				top: 290px;
+				left: -50px;
+				opacity: 1.5;
+				}
+			.n_date {
+				font-size: 3em;
+				font-weight: bolder;
+				color: #FFFFD2;
+				}
+			.n_time {
+				font-size: 2.7em;
+				font-weight: bold;
+				position: relative;
+				left: 15px;
+				color: #FFFFE4;
+				}
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<!-- 법전 이미지 박스 -->
+			<div class="main_logo">
+				<!-- 현재 시간 박스(자바스크립트)-->
+				<div id="time_box">
+					<p class="n_date"></p>
+					<p class="n_time"></p>
+				</div>
+			</div>
+			<div>
+				<ul class="menu">
+					<a href="project3/word.html" id="word" onclick="click1"> <!-- #word에 onmouseover 이벤트 추가 -->
+						<li>법률용어 알기</li>
+					</a>
+					<a href="project3/trial.html" id="trial"> <!-- #trial에 onmouseover 이벤트 추가 -->
+						<li>재판 해보기<br> 
+							<p class="hide1">
+								여러분이 판사가 되어보세요!
+							</p>
+						</li>
+					</a>
+					<a href="project3/jury.html" id="jury"> <!-- #word에 onmouseover 이벤트 추가 -->
+						<li>국민참여재판이란?<br>
+							<p class="hide2">
+								실제 재판에 참여하는 방법도 있어요!
+							</p>
+						</li>
+					</a>
+				</ul>
+			</div>
+			
+		</div><!--#container 닫음-->
+	</body>
+</html>

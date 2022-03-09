@@ -1,0 +1,468 @@
+<!doctype html>
+<html lang="ko">
+	<head>
+		<!-- noto sans 글자체 -->
+		<link rel="stylesheet" href="css/camptip2.css" type="text/css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<title>
+			맛있는 요리를 위한 팁
+		</title>
+		<script>
+
+// 코로나 안내문
+			var flag = true;
+			function view() {
+				if (flag) {
+					flag = false;
+					down();
+				}
+				else {
+					flag = true;
+					up();
+				}
+
+				function down() {
+					var down = document.querySelector(".arcbox1");
+					var downin = document.querySelector("#articlemenu1");
+					var change = document.querySelectorAll(".articlemenuimg")[0];
+					down.style.height = "165px";
+					downin.style.height = "165px";
+					change.style.transform = "rotateZ(180deg)";
+				}
+				function up() {
+					var up = document.querySelector(".arcbox1");
+					var upin = document.querySelector("#articlemenu1");
+					var change = document.querySelectorAll(".articlemenuimg")[0];
+					up.style.height = "50px";
+					upin.style.height = "50px";
+					change.style.transform = "rotateZ(0deg)";
+				}
+			}
+// 공지사항 오픈
+			function openfullbox() {
+				var open = document.querySelector("#noticeboxfull");
+				var close = document.querySelector("#noticebox");
+				open.style.display = "block";
+				open.style.display = "flex";
+				close.style.display = "none";
+			}
+
+// 공지사항 닫기
+			function closefullbox() {
+				var close = document.querySelector("#noticeboxfull");
+				var open = document.querySelector("#noticebox");
+				close.style.display = "none";
+				open.style.display = "block";
+			}
+
+// 우측 고정 메뉴바
+	// 흰 위 화살표 색 on
+				function yellowhigh() {
+					document.querySelector("#high").src = "image/yellowhigh.png";
+				}
+	// 노랑 위 화살표색 off
+				function whitehigh() {
+					document.querySelector("#high").src = "image/whitehigh.png";
+				}
+
+	// 흰 집 색 on
+				function yellowhm() {
+					document.querySelector("#whitehm").src = "image/yellowhm.png";
+				}
+	// 노랑 집 색 off
+				function whitehm() {
+					document.querySelector("#whitehm").src = "image/whitehm.png";
+				}
+
+	// 흰 돋보기 색 on
+				function yellowfind() {
+					document.querySelector("#whitefind").src = "image/yellowfind.png";
+				}
+	// 노랑 돋보기 색 off
+				function whitefind() {
+					document.querySelector("#whitefind").src = "image/whitefind.png";
+				}
+
+	// 흰 하트 색 on
+				function yellowht() {
+					document.querySelector("#whiteht").src = "image/yellowht.png";
+				}
+	// 노랑 하트 색 off
+				function whiteht() {
+					document.querySelector("#whiteht").src = "image/whiteht.png";
+				}
+
+	// 흰 공유 색 on
+				function yellowfree() {
+					document.querySelector("#whitefree").src = "image/yellowfree.png";
+				}
+	// 노랑 공유 색 off
+				function whitefree() {
+					document.querySelector("#whitefree").src = "image/whitefree.png";
+				}
+
+	// 흰 아래 화살표 색 on
+				function yellowdown() {
+					document.querySelector("#whitedown").src = "image/yellowdown.png";
+				}
+	// 노랑 아래 화살표 색 off
+				function whitedown() {
+					document.querySelector("#whitedown").src = "image/whitedown.png";
+				}
+		</script>
+	</head>
+	<body>
+		<div id="container">
+			<div id="menubar">
+				<div onmouseover="yellowhigh();" onmouseout="whitehigh();">
+					<a href="#container"><img src="image/whitehigh.png" alt="흰색위화살표아이콘" id="high"></a>
+				</div>
+				<div onmouseover="yellowhm();" onmouseout="whitehm();">
+					<a href="main.html"><img src="image/whitehm.png" alt="흰색홈아이콘" id="whitehm"></a>
+				</div>
+				<div onmouseover="yellowfind();" onmouseout="whitefind();">
+					<a href="content.html"><img src="image/whitefind.png" alt="흰색검색아이콘" id="whitefind"></a>
+				</div>
+				<div onmouseover="yellowht();" onmouseout="whiteht();">
+					<img src="image/whiteht.png" alt="흰색하트아이콘" id="whiteht">
+				</div>
+				<div onmouseover="yellowfree();" onmouseout="whitefree();">
+					<img src="image/whitefree.png" alt="흰색공유아이콘" id="whitefree">
+				</div>
+				<div onmouseover="yellowdown();" onmouseout="whitedown();">
+					<a href="#foot"><img src="image/whitedown.png" alt="흰색아래화살표아이콘" id="whitedown"></a>
+				</div>
+			</div>
+			<header>
+				<div class="headtop">
+					<div class="sns">
+						<img src="image/instarlogo.png" alt="인스타그램로고사진" usemap="#insta">
+						<img src="image/facelogo.png" alt="페이스북로고사진" usemap="#face">
+						<img src="image/birdlogo.png" alt="트위터로고사진" usemap="#bird">
+					</div>
+					<div class="headlogo">
+						<img src="image/headlogo.png" alt="헤드로고사진" usemap="#gohome">
+							<map name="gohome">
+								<area target="_self" shape="rect" coords="0,0,387,64" href="main.html" alt="홈으로가기">
+							</map>
+					</div>
+					<div class="login">
+						<div>
+							<a href="login.html"><p>로그인</p></a>
+						</div>
+						<div>
+							<a href="#"><p>가입하기</p></a>
+						</div>
+					</div>
+				</div>
+				<div class="mainheadbot">
+					<div class="headbot">
+						<div>
+							
+						</div>
+						<div id="headmenu">
+							<div>
+								<h4>캠핑장검색</h4>
+								<a href="map.html"><p>지도검색</p></a>
+								<a href="content.html"><p>컨텐츠검색</p></a>
+							</div>
+							<div>
+								<h4>이달의캠핑장</h4>
+								<a href="month_page.html"><p>이달의캠핑장</p></a>
+							</div>
+							<div>
+								<h4>캠핑꿀팁</h4>
+								<a href="camptip1.html"><p>장비꿀팁</p></a>
+								<a href="camptip2.html"><p>맛있는요리</p></a>
+								<a href="camptip3.html"><p>계절별컨텐츠</p></a>
+							</div>
+						</div>
+						<div>
+
+						</div>
+					</div>
+				</div>
+			</header>
+			<section>
+				<article class="arc1">
+					<div class="arcbox1">
+						<div id="articlemenu1">
+							<div>
+								<img src="image/i.png" alt="i로고">
+								<p>코로나19(COVID-19) 관련 안내</p>
+							</div>
+							<div>
+								<p>현재 시행되고 있는 여행 제한 조치를 반드시 확인해주세요. 경우에 따라 특정목적의 여행만 허용되거나,<br>관광 목적의 여행이 제한될 수 있는 점 유의하시기 바랍니다.<br><br><a href="#">자세히 알아보기</a></p>
+							</div>
+						</div>
+						<div id="menubut" onclick="view();">
+							<img src="image/down.png" alt="아래화살표로고" class="articlemenuimg">
+						</div>
+					</div>
+					<div id="bc">
+					</div>
+					<div id="noticemain">
+						<div id="noticeboxfull">
+							<div id="noticeimg">
+								<img src="image/close.png" alt="닫기아이콘" onclick="closefullbox();">
+							</div>
+							<div class="noticeboxtop">
+								<div class="noticeboxcolor1">
+									<p>캠핑장 운영수칙 필독사항<br><span>6가지 운영수칙</span></p>
+								</div>
+								<div class="noticeboxcolor2">
+									<p>코로나19 방침 공지사항<br><span>코로나19로 인한 캠핑장 안내</span></p>
+								</div>
+								<div class="noticeboxcolor3">
+									<p>8월 캠핑장 예약 안내<br><span>8월 예약 안내사항</span></p>
+								</div>
+								<div class="noticeboxcolor4">
+									<p>2021 캠핑 페스티벌 안내<br><span>한탕강 페스티벌 안내</span></p>
+								</div>
+								<div class="noticeboxcolor5">
+									
+								</div>
+								<div class="noticeboxcolor6">
+
+								</div>
+							</div>
+							<div class="noticeboxbot">
+								<img src="image/noticebox.jpg" alt="공지사항사진">
+							</div>
+						</div>
+						<div id="noticebox" onclick="openfullbox();">
+							<img src="image/notice.png" alt="공지사항아이콘">
+							<p>공지사항</p>
+						</div>
+					</div>
+				</article>
+<!-- ▼여기부터 camptip2 -->
+				<article class="arc2">
+					<img src="image/campfind1.jpg" alt="홈사진" class="arcimg arcimg1">
+					<p class="camptip1">캠핑의 꽃! 음식을 맛있게 해먹는 방법</p>
+					<div id="bc">
+					</div>
+				</article>
+				
+				<article class="arc3">
+					<h2>※<span class="important">음료</span>를 시원하게 보관하는 방법</h2>
+					<hr class="line">
+					<div class="cook">
+						<div class="cook-img">
+							<img src="image/cook/cook1.jpg" alt="맛있는 요리를 위한 팁 1번 사진" class="campimg">
+						</div>
+						<div class="cook-name">
+							<div class="explain">
+								<div class="extop">
+									<h3>소금 한 스푼으로 맥주나 음료수를 시원하게!</h3>
+								</div>
+								<div class="exbot">
+									<p><span id="bigscore">1. </span> 장시간 이동하다보면 맥주나 음료수 같은 경우는 쉽게 미지근해지기 마련이죠.<br><br>
+									<span id="bigscore">2. </span> 음료수는 얼음을 넣어서 마시면 되지만 맥주는 그렇게 마시면 밍밍해져서 맛이 없어지잖아요.<br><br>
+									<span id="bigscore">3. </span> 그렇다면 맥주를 조금 더 시원하게 마시는 방법은 뭐가 있을까요?<br><br>
+									<span id="bigscore">4. </span> 많은 분들이 사용하시는 방법은 각얼음을 사서 재워두는데 이럴 경우에는 찬기가 맥주에 닿질 못해요.<br><br>
+									<span id="bigscore">5. </span> 이럴 때 사용하는 방법이 소금 한 스푼입니다!<br><br>
+									<span id="bigscore">6. </span> 맥주를 보온통에 넣고 각얼음을 넣은 후에 소금 한 스푼을 넣고 흔들어주세요. 맥주가 차가워지고 가끔은 샤베트로도 마시실 수 있습니다!</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<h2>※<span class="important">음식</span>을 신선하고 간단하게 보관하는 방법</h2>
+					<hr class="line">
+					<div class="cook">
+						<div class="cook-img">
+							<img src="image/cook/cook2.jpg" alt="맛있는 요리를 위한 팁 2번 사진">
+						</div>
+						<div class="cook-name">
+							<div class="explain">
+								<div class="extop">
+									<h3>음식은반조리 상태로 가져가기!</h3>
+								</div>
+								<div class="exbot">
+									<p><span id="bigscore">1. </span> 맛있는 음식을 드시기 위해 재료를 구매해서 전부 가져가시는 경우가 많은데 캠핑장에 갈 때는 재료를 통째로 가져가시면 불편해요.<br><br>
+									<span id="bigscore">2. </span> 요리재료를 손질하는데 시간도 많이 소비되고 물이 원활하게 공급되지 않거나 음식물 쓰레기를 처리하기 힘든 상황이 생기기 때문이에요.<br><br>
+									<span id="bigscore">3. </span> 따라서 재료는 미리 손질해두시고 가능하면 음식을 반조리 상태로 가져가시는 것을 추천드려요!<br><br>
+									<span id="bigscore">4. </span> 예를 들어 카레라이스 같이 시간이 지나도 맛이 변하지 않는 음식들은 만들어 가셔서 데워서 드세요!<br><br>
+									<span id="bigscore">5. </span> 밀푀유나베, 샤브샤브 같이 모양을 만들어 드시는 냄비요리 같은 음식은 모양을 만들어 가져가신 후에 육수만 부어드시면 편하게 드실 수 있어요!</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<h2>※<span class="important">쌀 양</span>을 적당하게 가져가는 방법</h2>
+					<hr class="line">
+					<div class="cook">
+						<div class="cook-img">
+							<img src="image/cook/cook3.jpg" alt="맛있는 요리를 위한 팁 3번 사진">
+						</div>
+						<div class="cook-name">
+							<div class="explain">
+								<div class="extop">
+									<h3>종이컵 1컵이 밥 한 그릇!</h3>
+								</div>
+								<div class="exbot">
+									<p><span id="bigscore">1. </span> 캠핑가서 밥을 해먹으려 쌀을 가져가려 하는데 쌀 양을 얼마만큼 가져가셔야 할지 모르시겠다면, 종이컵을 활용해보세요.<br><br>
+									<span id="bigscore">2. </span> '종이컵 1컵=공기밥 한 그릇'이므로, 4인 가족이 1끼 하려고 한다면 종이컵 4개 분량의 쌀을 가지고 가시면 돼요!<br><br>
+									<span id="bigscore">3. </span> 밥을 많이 먹는다 싶으시면 종이컵 대신 우유곽을 활용하는 방법도 있어요.<br><br>
+									<span id="bigscore">4. </span> 정리 : 종이컵 1컵=공기밥 한 그릇 / 우유 200ml=공기밥 대사이즈</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<h2>※<span class="important">조미료</span>를 사용하지 않고 음식에 양념하는 방법</h2>
+					<hr class="line">
+					<div class="cook">
+						<div class="cook-img">
+							<img src="image/cook/cook4.jpg" alt="맛있는 요리를 위한 팁 4번 사진">
+						</div>
+						<div class="cook-name">
+							<div class="explain">
+								<div class="extop">
+									<h3>먹고 남은쌈장으로 양념하기!</h3>
+								</div>
+								<div class="exbot">
+									<p><span id="bigscore">1. </span> 고기를 구워먹는 게 간단한 요리라고 해도 캠핑에서는 고기만 먹을 수 없겠죠.<br><br>
+									<span id="bigscore">2. </span> 그래서 간단하게 찌개요리라도 하는 경우가 많은데 보편적으면서도 비교적 쉽게 만들 수 있는 것이<br><br>
+									<span id="bigscore">3. </span> 된장찌개, 두부찌개, 매운탕, 김치찌개 등 입니다.<br><br>
+									<span id="bigscore">4. </span> 그런데 찌개음식을 할 때 양념장을 만들어 가는 재료가 많잖아요. 이럴 때 쌈장을 사용하면 어떨까요?<br><br>
+									<span id="bigscore">5. </span> 쌈장에는 기본적으로 갖은 양념이 들어가 있어 복잡하게 재료를 손질하지 않아도 쌈장만으로도 충분한 맛을 낼 수 있습니다.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<h2>※<span class="important">남은 고기</span>를 활용하는 방법</h2>
+					<hr class="line">
+					<div class="cook">
+						<div class="cook-img">
+							<img src="image/cook/cook5.jpg" alt="맛있는 요리를 위한 팁 5번 사진">
+						</div>
+						<div class="cook-name">
+							<div class="explain">
+								<div class="extop">
+									<h3>고기를 이용해 찌개 해먹기!</h3>
+								</div>
+								<div class="exbot">
+									<p><span id="bigscore">1. </span> 캠핑에 가서 한 번쯤 해먹게 되는 것이 있다면 바로 고기 구이일 거예요.<br><br>
+									<span id="bigscore">2. </span> 특히, 술까지 마시다 보면 다음 날 아침까지 테이블 위에 덩그러니 놓인 고기 덩이를 보기 쉬운데요.<br><br>
+									<span id="bigscore">3. </span> 고기를 버리자니 아깝고, 그냥 먹기에는 딱딱하죠. 그래서 남은 고기로 찌개를 해먹는 거예요.<br><br>
+									<span id="bigscore">4. </span> 다른 재료가 필요하지도 않고 남은 음식을 처리할 수 있어서 일석이조입니다!<br><br>
+									<span id="bigscore">5. </span> 남은 숯불고기로 찌개를 끊이면 불맛 가득한 요리를 느끼실 수 있습니다!</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<h2>※<span class="important">시든 쌈채소(야채)</span>를 싱싱하게 만드는 방법</h2>
+					<hr class="line">
+					<div class="cook">
+						<div class="cook-img">
+							<img src="image/cook/cook6.jpg" alt="맛있는 요리를 위한 팁 6번 사진">
+						</div>
+						<div class="cook-name">
+							<div class="explain">
+								<div class="extop">
+									<h3>쌈채소가 시들었다면 찬 물에 담궈보세요!</h3>
+								</div>
+								<div class="exbot">
+									<p><span id="bigscore">1. </span> 캠핑가서 고기와 먹으려고 쌈채소를 준비해 갔는데 그 사이에 시들어버리는 경우가 대부분이죠.<br><br>
+									<span id="bigscore">2. </span> 이럴 때는 맥주와 함께 가져왔던 각얼음에 물을 넣고 그 안에 담궈두는 방법이 있는데요.<br><br>
+									<span id="bigscore">3. </span> 20분 정도 담궈 놓으면 어느새 싱싱해진답니다.<br><br>
+									<span id="bigscore">4. </span> 단, 오래된 쌈채소는 아무리 담궈도 싱싱해지지 않으니 주의하세요.<br><br>
+									<span id="bigscore">5. </span> 이러한 이유로 캠핑에서는 쌈채소 보다는 김치와 먹는 것이 더 적당해요. 그래도 쌈채소를 가져가 시들었을 경우에는 찬 물에 담그어 두기!</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<h2>※<span class="important">캠핑장 환경</span>을 고려하여 재료를 싱싱하게 보관하는 방법</h2>
+					<hr class="line">
+					<div class="cook">
+						<div class="cook-img">
+							<img src="image/cook/cook7.jpg" alt="맛있는 요리를 위한 팁 7번 사진">
+						</div>
+						<div class="cook-name">
+							<div class="explain">
+								<div class="extop">
+									<h3>전기쿨러 사용하기!</h3>
+								</div>
+								<div class="exbot">
+									<p><span id="bigscore">1. </span> 요즘에는 현대식인 캠핑장이 많이 있죠!<br><br>
+									<span id="bigscore">2. </span> 냉장고 말고도 전기를 이용하여 영하의 온도에서 음식을 보관할 수 있는 쿨러도 등장했습니다.<br><br>
+									<span id="bigscore">3. </span> 앞서 설명드린 것처럼 맥주나 쌈채소가 식는 경우가 많이 있을 텐데요.<br><br>
+									<span id="bigscore">4. </span> 여건이 충분하다면 아이스 박스 대신에 쿨러를 사용해보시는 건 어떨까요?<br><br>
+									<span id="bigscore">5. </span> 쿨러를 챙기시는 경우에는 캠핑장의 환경도 고려해야 하지만 이용할 차량의 공간도 고려해야 합니다!<br><br>
+									<span id="bigscore">6. </span> 고기와 음료,쌈채소를 다른 온도에서 보관하시고 싶으실 때에는 전기쿨러와 일반쿨러 두 가지를 가지고 가시는 방법도 있는데요.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<h2>※<span class="important">가벼운 캠핑</span>을 위한 방법.</h2>
+					<hr class="line">
+					<div class="cook">
+						<div class="cook-img">
+							<img src="image/cook/cook8.jpg" alt="맛있는 요리를 위한 팁 8번 사진">
+						</div>
+						<div class="cook-name">
+							<div class="explain">
+								<div class="extop">
+									<h3>음식 재료를 과도하게 챙기지 않기!</h3>
+								</div>
+								<div class="exbot">
+									<p><span id="bigscore">1. </span> 캠핑의 꽃은 캠핑음식이죠.<br><br>
+									<span id="bigscore">2. </span> 그러다보니 많은 분들이 캠핑을 위해 이것저것 많은 재료들을 준비하게 되는데요.<br><br>
+									<span id="bigscore">3. </span> 이렇게 되면 마지막 날에는 많은 잔반들을 가져오기 마련입니다.<br><br>
+									<span id="bigscore">4. </span> 이렇게 되면 음식 하나하나에 신경을 쓸 수도 없을 뿐더러 수 많은 잔반을 처리하는 것 또한 일일 거예요.<br><br>
+									<span id="bigscore">5. </span> 그래서 음식을 과도하게 챙기지 않는 것이 좋아요!<br><br>
+									<span id="bigscore">6. </span> 음식이 부족하다면 일정보다 조금 더 일찍 복귀하여 식사를 하시는 방법도 있기 때문이죠!</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</article>
+			</section>
+			
+			<footer id="foot">
+				<div class="ftboxtop">
+					<div>
+						<div>
+							<p>홈</p>
+							<p>회사소개</p>
+							<p>이용 약관</p>
+							<p>파트너</p>
+							<p>자주 묻는 질문</p>
+							<p>최저가 보장제</p>
+						</div>
+						<div>
+							<img src="image/instaline.png" alt="인스타그램로고사진" usemap="#insta">
+							<map name="insta">
+								<area target="_blank" shape="rect" coords="0,0,78,78" href="https://www.instagram.com" alt="인스타그램">
+							</map>
+							<img src="image/faceline.png" alt="페이스북로고사진" usemap="#face">
+							<map name="face">
+								<area target="_blank" shape="rect" coords="0,0,78,78" href="https://www.facebook.com" alt="페이스북">
+							</map>
+							<img src="image/birdline.png" alt="트위터로고사진" usemap="#bird">
+							<map name="bird">
+								<area target="_blank" shape="rect" coords="0,0,78,78" href="https://www.twitter.com" alt="트위터">
+							</map>
+						</div>
+					</div>
+				</div>
+				<div class="ftboxmid">
+					<div>
+						<div>
+							<p>법인명(상호) 주식회사 캠프퍼니 &nbsp;&nbsp;사업자 등록번호 안내:[125-81-7597] &nbsp;&nbsp;[사업자 정보 확인]<br>전화:031-000-0000 &nbsp;&nbsp;팩스:031-000-0000 &nbsp;&nbsp;주소:서울시 성동구 왕십리로 303<br>ⓒCAMPFUNNY.com</p>
+						</div>
+						<div>
+							<img src="image/lastfoot.png" alt="홈페이지로고사진">
+						</div>
+					</div>
+				</div>
+				<div class="ftboxbot">
+					<p>ⓒ2021(주)캠프퍼니.All rights reserved</p>
+				</div>
+			</footer>
+		</div>
+	</body>
+</html>

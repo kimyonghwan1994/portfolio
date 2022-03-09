@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="ko">
+	<head>
+		<!-- noto sans 글자체 -->
+		<link rel="stylesheet" href="css/camptip1.css" type="text/css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<title>
+			장비꿀팁
+		</title>
+		<script>
+
+// 코로나 안내문
+			var flag = true;
+			function view() {
+				if (flag) {
+					flag = false;
+					down();
+				}
+				else {
+					flag = true;
+					up();
+				}
+
+				function down() {
+					var down = document.querySelector(".arcbox1");
+					var downin = document.querySelector("#articlemenu1");
+					var change = document.querySelectorAll(".articlemenuimg")[0];
+					down.style.height = "165px";
+					downin.style.height = "165px";
+					change.style.transform = "rotateZ(180deg)";
+				}
+				function up() {
+					var up = document.querySelector(".arcbox1");
+					var upin = document.querySelector("#articlemenu1");
+					var change = document.querySelectorAll(".articlemenuimg")[0];
+					up.style.height = "50px";
+					upin.style.height = "50px";
+					change.style.transform = "rotateZ(0deg)";
+				}
+			}
+// 공지사항 오픈
+			function openfullbox() {
+				var open = document.querySelector("#noticeboxfull");
+				var close = document.querySelector("#noticebox");
+				open.style.display = "block";
+				open.style.display = "flex";
+				close.style.display = "none";
+			}
+
+// 공지사항 닫기
+			function closefullbox() {
+				var close = document.querySelector("#noticeboxfull");
+				var open = document.querySelector("#noticebox");
+				close.style.display = "none";
+				open.style.display = "block";
+			}
+
+// 우측 고정 메뉴바
+	// 흰 위 화살표 색 on
+				function yellowhigh() {
+					document.querySelector("#high").src = "image/yellowhigh.png";
+				}
+	// 노랑 위 화살표색 off
+				function whitehigh() {
+					document.querySelector("#high").src = "image/whitehigh.png";
+				}
+
+	// 흰 집 색 on
+				function yellowhm() {
+					document.querySelector("#whitehm").src = "image/yellowhm.png";
+				}
+	// 노랑 집 색 off
+				function whitehm() {
+					document.querySelector("#whitehm").src = "image/whitehm.png";
+				}
+
+	// 흰 돋보기 색 on
+				function yellowfind() {
+					document.querySelector("#whitefind").src = "image/yellowfind.png";
+				}
+	// 노랑 돋보기 색 off
+				function whitefind() {
+					document.querySelector("#whitefind").src = "image/whitefind.png";
+				}
+
+	// 흰 하트 색 on
+				function yellowht() {
+					document.querySelector("#whiteht").src = "image/yellowht.png";
+				}
+	// 노랑 하트 색 off
+				function whiteht() {
+					document.querySelector("#whiteht").src = "image/whiteht.png";
+				}
+
+	// 흰 공유 색 on
+				function yellowfree() {
+					document.querySelector("#whitefree").src = "image/yellowfree.png";
+				}
+	// 노랑 공유 색 off
+				function whitefree() {
+					document.querySelector("#whitefree").src = "image/whitefree.png";
+				}
+
+	// 흰 아래 화살표 색 on
+				function yellowdown() {
+					document.querySelector("#whitedown").src = "image/yellowdown.png";
+				}
+	// 노랑 아래 화살표 색 off
+				function whitedown() {
+					document.querySelector("#whitedown").src = "image/whitedown.png";
+				}
+		</script>
+	</head>
+	<body>
+		<div id="container">
+			<div id="menubar">
+				<div onmouseover="yellowhigh();" onmouseout="whitehigh();">
+					<a href="#container"><img src="image/whitehigh.png" alt="흰색위화살표아이콘" id="high"></a>
+				</div>
+				<div onmouseover="yellowhm();" onmouseout="whitehm();">
+					<a href="main.html"><img src="image/whitehm.png" alt="흰색홈아이콘" id="whitehm"></a>
+				</div>
+				<div onmouseover="yellowfind();" onmouseout="whitefind();">
+					<a href="content.html"><img src="image/whitefind.png" alt="흰색검색아이콘" id="whitefind"></a>
+				</div>
+				<div onmouseover="yellowht();" onmouseout="whiteht();">
+					<img src="image/whiteht.png" alt="흰색하트아이콘" id="whiteht">
+				</div>
+				<div onmouseover="yellowfree();" onmouseout="whitefree();">
+					<img src="image/whitefree.png" alt="흰색공유아이콘" id="whitefree">
+				</div>
+				<div onmouseover="yellowdown();" onmouseout="whitedown();">
+					<a href="#foot"><img src="image/whitedown.png" alt="흰색아래화살표아이콘" id="whitedown"></a>
+				</div>
+			</div>
+			<header>
+				<div class="headtop">
+					<div class="sns">
+						<img src="image/instarlogo.png" alt="인스타그램로고사진" usemap="#insta">
+						<img src="image/facelogo.png" alt="페이스북로고사진" usemap="#face">
+						<img src="image/birdlogo.png" alt="트위터로고사진" usemap="#bird">
+					</div>
+					<div class="headlogo">
+						<img src="image/headlogo.png" alt="헤드로고사진" usemap="#gohome">
+							<map name="gohome">
+								<area target="_self" shape="rect" coords="0,0,387,64" href="main.html" alt="홈으로가기">
+							</map>
+					</div>
+					<div class="login">
+						<div>
+							<a href="login.html"><p>로그인</p></a>
+						</div>
+						<div>
+							<a href="#"><p>가입하기</p></a>
+						</div>
+					</div>
+				</div>
+				<div class="mainheadbot">
+					<div class="headbot">
+						<div>
+							
+						</div>
+						<div id="headmenu">
+							<div>
+								<h4>캠핑장검색</h4>
+								<a href="map.html"><p>지도검색</p></a>
+								<a href="content.html"><p>컨텐츠검색</p></a>
+							</div>
+							<div>
+								<h4>이달의캠핑장</h4>
+								<a href="month_page.html"><p>이달의캠핑장</p></a>
+							</div>
+							<div>
+								<h4>캠핑꿀팁</h4>
+								<a href="camptip1.html"><p>장비꿀팁</p></a>
+								<a href="camptip2.html"><p>맛있는요리</p></a>
+								<a href="camptip3.html"><p>계절별컨텐츠</p></a>
+							</div>
+						</div>
+						<div>
+
+						</div>
+					</div>
+				</div>
+			</header>
+			<section>
+				<article class="arc1">
+					<div class="arcbox1">
+						<div id="articlemenu1">
+							<div>
+								<img src="image/i.png" alt="i로고">
+								<p>코로나19(COVID-19) 관련 안내</p>
+							</div>
+							<div>
+								<p>현재 시행되고 있는 여행 제한 조치를 반드시 확인해주세요. 경우에 따라 특정목적의 여행만 허용되거나,<br>관광 목적의 여행이 제한될 수 있는 점 유의하시기 바랍니다.<br><br><a href="#">자세히 알아보기</a></p>
+							</div>
+						</div>
+						<div id="menubut" onclick="view();">
+							<img src="image/down.png" alt="아래화살표로고" class="articlemenuimg">
+						</div>
+					</div>
+					<div id="bc">
+					</div>
+					<div id="noticemain">
+						<div id="noticeboxfull">
+							<div id="noticeimg">
+								<img src="image/close.png" alt="닫기아이콘" onclick="closefullbox();">
+							</div>
+							<div class="noticeboxtop">
+								<div class="noticeboxcolor1">
+									<p>캠핑장 운영수칙 필독사항<br><span>6가지 운영수칙</span></p>
+								</div>
+								<div class="noticeboxcolor2">
+									<p>코로나19 방침 공지사항<br><span>코로나19로 인한 캠핑장 안내</span></p>
+								</div>
+								<div class="noticeboxcolor3">
+									<p>8월 캠핑장 예약 안내<br><span>8월 예약 안내사항</span></p>
+								</div>
+								<div class="noticeboxcolor4">
+									<p>2021 캠핑 페스티벌 안내<br><span>한탕강 페스티벌 안내</span></p>
+								</div>
+								<div class="noticeboxcolor5">
+									
+								</div>
+								<div class="noticeboxcolor6">
+
+								</div>
+							</div>
+							<div class="noticeboxbot">
+								<img src="image/noticebox.jpg" alt="공지사항사진">
+							</div>
+						</div>
+						<div id="noticebox" onclick="openfullbox();">
+							<img src="image/notice.png" alt="공지사항아이콘">
+							<p>공지사항</p>
+						</div>
+					</div>
+				</article>
+<!-- ▼여기부터 camptip1 -->
+				<article class="arc2">
+					<img src="image/campfind1.jpg" alt="홈사진" class="arcimg arcimg1">
+					<p class="camptip1">캠핑 꿀팁! 챙겨두면 편리해요!</p>
+					<div id="bc">
+					</div>
+				</article>
+				
+				<article class="arc3">
+					<h2>※<span class="important">텐트</span>를 추천합니다.</h2>
+					<hr class="line">
+					<div class="goods">
+						<div class="goodsimg">
+							<img src="image/goods/goods1.jpg" alt="캠핑용품 1번 사진" class="campimg">
+						</div>
+						<div class="goodsname">
+							<div class="explain">
+								<div class="extop">
+									<h3>텐트를 정하실 때에는 이렇게 하세요!</h3>
+								</div>
+								<div class="exbot">
+									<p><span id="bigscore">1.</span> 설치가 쉽고 가벼운 텐트를 추천합니다.<br><br>
+									<span id="bigscore">2.</span> 계절의 특성을 타지 않는 사계절 텐트를 추천합니다.<br><br>
+									<span id="bigscore">3.</span> 캠핑의 형태, 사용 인원 수를 고려해야 합니다.<br><br>
+									<span id="bigscore">4.</span> 햇빛이나 비, 눈을 막을 수 있는 그늘막도 준비하시는 것이 좋습니다.<br><br>
+									<span id="bigscore">5.</span> 그늘막, 해먹 등을 나무에 설치할 때에는 나무가 힘을 버틸 수 있는지,<br> 먼저 확인하고 설치해야 합니다.<br><br>
+									<span id="bigscore">6.</span> 그늘막, 해먹 등을 나무에 설치할 때에는 나무가 상하지 않도록<br> 로프를 묶기 전에 수건 등으로 나무를 감싸주세요.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<h2>※<span class="important">캠핑요리 준비물</span>을 챙기세요.</h2>
+					<hr class="line">
+					<div class="goods">
+						<div class="goodsimg half">
+							<img src="image/goods/goods2-1.jpg" alt="캠핑용품 2-1번 사진" class="halfimg">
+							<img src="image/goods/goods2-2.jpg" alt="캠핑용품 2-2번 사진" class="halfimg">
+						</div>
+						<div class="goodsname">
+							<div class="explain">
+								<div class="extop">
+									<h3>캠핑요리 준비물에는 아이스박스와 가열도구가 있어요!</h3>
+								</div>
+								<div class="exbot">
+									<p><span id="bigscore">1.</span> 여름에는 특히 음식이 빨리 상하기 때문에 아이스 박스를 준비해서 음식을 차게 보관해야 합니다.<br><br>
+									<span id="bigscore">2.</span> 아이스 박스는 차량 짐칸 크기에 맞는 제품으로 정하셔야 합니다.<br><br>
+									<span id="bigscore">3.</span> 어디서든 음식을 직접해 먹을 수 있게 가열도구를 챙기시는 것이 좋습니다.<br><br>
+									<span id="bigscore">4.</span> 휴대용 버너를 준비하시는 경우에는 사고 방지를 위해 부탄가스와 분리해서 보관하시는 것이 좋습니다.<br><br>
+									<span id="bigscore">5.</span> 부탄가스를 보관하실 때에는 햇빛이 들지 않는 서늘한 곳에 보관해주세요.<br><br>
+									<span id="bigscore">6.</span> 요리시간 절약을 위해 가열도구는 두 개 정도 챙기시는 것이 좋습니다.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<h2>※<span class="important">기타 편리용품</span>을 챙기세요.</h2>
+					<hr class="line">
+					<div class="goods">
+						<div class="goodsimg half">
+							<img src="image/goods/goods3-1.jpg" alt="캠핑용품 3-1번 사진" class="halfimg">
+							<img src="image/goods/goods3-2.jpg" alt="캠핑용품 3-2번 사진" class="halfimg">
+						</div>
+						<div class="goodsname">
+							<div class="explain">
+								<div class="extop">
+									<h3>전기랜턴, 테이블, 의자를 준비해서 편한 캠핑을 즐기세요!</h3>
+								</div>
+								<div class="exbot">
+									<p><span id="bigscore">1.</span> 캠핑에서 전기랜턴은 필수입니다. 휴대폰 플래시와 기능과 차이가 크답니다.<br><br>
+									<span id="bigscore">2.</span> 세워서 사용하는 랜턴도 좋지만 손전등으로도 사용할 수 있는 겸용이면 더 좋습니다.<br><br>
+									<span id="bigscore">3.</span> 만약을 대비해 전기랜턴 배터리를 준비해두세요.<br><br>
+									<span id="bigscore">4.</span> 짐을 넣을 공간이 넉넉하다면 캠핑용 테이블과 의자를 준비하는 것이 좋습니다.<br><br>
+									<span id="bigscore">5.</span> 테이블과 의자는 식사할 때, 편하게 이용할 수 있고, 쉬는 시간에 대화를 나누거나 책을 읽을 때 더욱 편안하게 보낼 수 있답니다.<br><br>
+									<span id="bigscore">6.</span> 테이블과 의자를 챙기실 때에는 튼튼한 것으로 고르되 접이식이고 가벼운 제품으로 고르시는 것이 좋답니다.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<h2>※<span class="important">의약품</span>을 챙기세요.</h2>
+					<hr class="line">
+					<div class="goods">
+						<div class="goodsimg">
+							<img src="image/goods/goods4.jpg" alt="캠핑용품 4번 사진" class="campimg">
+						</div>
+						<div class="goodsname">
+							<div class="explain">
+								<div class="extop">
+									<h3>구급약품, 벌레퇴치제로 건강한 캠핑을 즐길 수 있어요!</h3>
+								</div>
+								<div class="exbot">
+									<p><span id="bigscore">1.</span> 벌레퇴치제로부터 각종 벌레에 대비할 수 있습니다.<br><br>
+									<span id="bigscore">2.</span> 벌레퇴치제에는 피우는 모기향, 스프레이형 퇴치제가 있습니다.<br><br>
+									<span id="bigscore">3.</span> 구성원 중 어린아이가 있다면 더 신중하게 고르셔야 합니다.<br><br>
+									<span id="bigscore">4.</span> 야외에서 활동하다 보면 다칠 수 있기 때문에 만약을 대비해 구급약품을 챙겨야합니다.<br><br>
+									<span id="bigscore">5.</span> 구급약품에는 상처용 연고, 일회용 밴드, 소독제와 멀미약, 소화제, 진통제 같은 상비약이 있습니다.<br><br>
+									<span id="bigscore">6.</span> 구급약품 이외에도 자외선 보호를 위한 선크림, 눈 세척용액과 같은 기타 의약품이 있습니다.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</article>
+			</section>
+			
+			<footer id="foot">
+				<div class="ftboxtop">
+					<div>
+						<div>
+							<p>홈</p>
+							<p>회사소개</p>
+							<p>이용 약관</p>
+							<p>파트너</p>
+							<p>자주 묻는 질문</p>
+							<p>최저가 보장제</p>
+						</div>
+						<div>
+							<img src="image/instaline.png" alt="인스타그램로고사진" usemap="#insta">
+							<map name="insta">
+								<area target="_blank" shape="rect" coords="0,0,78,78" href="https://www.instagram.com" alt="인스타그램">
+							</map>
+							<img src="image/faceline.png" alt="페이스북로고사진" usemap="#face">
+							<map name="face">
+								<area target="_blank" shape="rect" coords="0,0,78,78" href="https://www.facebook.com" alt="페이스북">
+							</map>
+							<img src="image/birdline.png" alt="트위터로고사진" usemap="#bird">
+							<map name="bird">
+								<area target="_blank" shape="rect" coords="0,0,78,78" href="https://www.twitter.com" alt="트위터">
+							</map>
+						</div>
+					</div>
+				</div>
+				<div class="ftboxmid">
+					<div>
+						<div>
+							<p>법인명(상호) 주식회사 캠프퍼니 &nbsp;&nbsp;사업자 등록번호 안내:[125-81-7597] &nbsp;&nbsp;[사업자 정보 확인]<br>전화:031-000-0000 &nbsp;&nbsp;팩스:031-000-0000 &nbsp;&nbsp;주소:서울시 성동구 왕십리로 303<br>ⓒCAMPFUNNY.com</p>
+						</div>
+						<div>
+							<img src="image/lastfoot.png" alt="홈페이지로고사진">
+						</div>
+					</div>
+				</div>
+				<div class="ftboxbot">
+					<p>ⓒ2021(주)캠프퍼니.All rights reserved</p>
+				</div>
+			</footer>
+		</div>
+	</body>
+</html>

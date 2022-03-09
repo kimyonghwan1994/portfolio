@@ -1,0 +1,753 @@
+﻿	<!DOCTYPE html>
+	<html lang="ko">
+		<head>
+			<meta charset="utf-8">
+			<meta name="viewport" content="width=device-width,initial-scale=1">
+			<title> project1 </title>
+			<style>
+				* {
+					box-sizing: border-box;
+					}
+				*:focus {
+					outline: none;
+					}
+				html,body {
+					width: 100%;
+					height: 2600px;
+					margin: 0;
+					padding: 0;
+					margin-top: 30px;
+					}
+				#container {
+					width: 75%;
+					height: 100%;
+					margin: 0 auto;
+					}
+				header,nav,section,aside,footer {
+					margin: 5px;
+					}
+		/*▲틀 설정*/
+				header {
+					height: 3%;
+					text-align: center;
+					border: 1px solid black;
+					}
+				h1 {
+					font-size: 2.4em; /*태블릿일 경우 vw*/
+					margin-top: 15px;
+					}
+		/*▲헤더 설정*/
+				nav {
+					height: 5%;
+					}
+				nav ul {
+					padding: 0px;
+					}
+				nav ul li {
+					width: 25%;
+					float: left;
+					list-style-type: none;
+					padding: 30px 0px;
+					text-align: center;
+					border-width: 5px 0px 5px 0px;
+					border-top-style: ridge;
+					border-bottom-style: groove;
+					}
+				nav:after {
+					content: "";
+					display: block;
+					clear: both;
+					}
+				nav ul li:first-child {
+					border-top-color: rgba(250,250,250,1);
+					border-bottom-color: rgba(220,220,220,0.4);
+					}
+				nav ul li:nth-child(2) {
+					border-top-color: rgba(240,240,240,0.8);
+					border-bottom-color: rgba(230,230,230,0.6);
+					}
+				nav ul li:nth-child(3) {
+					border-top-color: rgba(230,230,230,0.6);
+					border-bottom-color: rgba(240,240,240,0.8);
+					}
+				nav ul li:last-child {
+					border-top-color: rgba(220,220,220,0.4);
+					border-bottom-color: rgba(250,250,250,1);
+					}
+				nav ul li a:link,nav ul li a:visited {
+					text-decoration: none;
+					color: black;
+					font-size: 1.1em; /*태블릿일 경우 vw*/
+					font-weight: bolder;
+					}
+				nav ul li:hover {
+					background-color: rgba(200,200,200,0.5);
+					}
+				nav ul li:active>a {
+					color: gray;
+					}
+				nav ul li a:focus {
+					border-bottom: 2px solid black;
+					}
+		/*▲내비 설정*/
+				aside {
+					height: 28%;
+					position: relative;
+					}
+				.a-box div {
+					width: 100%;
+					position: relative;
+					position: absolute;
+					background-color: white;
+					}
+				aside div a img {
+					width: 100%;
+					height: 640px;
+					border: 1px solid black;
+					}
+				.a-box div:target {
+					z-index: 10;
+					}
+				aside div:last-child {
+					top: 640px;
+					text-align: center;
+					font-size: 1em /*태블릿에서는 vw사용*/
+					}
+		/*▲어사이드 설정*/
+				hr {
+					border: 2px solid black;
+					}
+				section {
+					height: 59%; /*1534px*/
+					position: relative;
+					}
+				#atc1 {
+					width: 100%;
+					position: relative;
+					position: absolute;
+					display: none;
+					}
+				#atc1:target {
+					display: block;
+					}
+				.i-box img {
+					width: 100%;
+					height: 600px;
+					}
+				.t-box h3 {
+					position: relative;
+					top: -300px;
+					color: white;
+					text-shadow: 1px 2px gray;
+					font-size: 2em; /*태블릿인 경우 vw*/
+					font-weight: bolder;
+					font-family: 돋움;
+					text-align: center;
+					}
+				.t-box p {
+					position: relative;
+					top: -270px;
+					color: white;
+					text-shadow: 1px 2px gray;
+					font-size: 1.3em; /*태블릿인 경우 vw*/
+					font-weight: bold;
+					font-family: 돋움;
+					text-align: center;
+					}
+				.monitor {
+					position: absolute;
+					width: 50%;
+					height: 300px;
+					background-image: url(img/monitor1.jpg);
+					background-repeat: no-repeat;
+					background-size: 100% 100%;
+					}
+				@keyframes monitor {
+					from {
+						background-image: url(img/monitor1.jpg);
+						}
+					33% {
+						background-image: url(img/monitor2.jpg);
+						background-repeat: no-repeat;
+						}
+					66% {
+						background-image: url(img/monitor3.jpg);
+						background-repeat: no-repeat;
+						}
+					}
+				.monitor {
+					animation-name: monitor;
+					animation-duration: 9s;
+					animation-direction: normal;
+					animation-iteration-count: infinite;
+					}
+					
+				.m-txt {
+					position: absolute;
+					width: 100%;
+					left: 100%;
+					top: -30px;
+					}
+				.m-txt p {
+					font-size: 2em;
+					font-weight: bolder;
+					text-shadow: 1px 1px 1px white;
+					}
+				
+				.sound img {
+					position: absolute;
+					width: 100%;
+					height: 300px;
+					top: 910px;
+					}
+				.s-txt {
+					width: 60%;
+					position: absolute;
+					top: 930px;
+					}
+				.s-txt p {
+					color: white;
+					font-size: 2em; /*태블릿일 경우 vw*/
+					font-weight: bolder;
+					text-shadow: 1px 1px 1px white;
+					}
+				.s-txt h3 {
+					color: white;
+					}
+				.strong {
+					color: gray;
+					text-shadow: 0px 1px blue;
+					}
+				.game img {
+					width: 60%;
+					position: absolute;
+					top: 1215px;
+					left: 40%;
+					}
+				.g-txt {
+					width: 40%;
+					position: absolute;
+					top: 1230px;
+					}
+				.g-txt p {
+					font-size: 2em; /*태블릿일 경우 vw*/
+					font-weight: bolder;
+					text-shadow: 1px 1px 1px white;
+					}
+		/*▲아티클1 설정*/
+				#atc2 {
+					position: relative;
+					position: absolute;
+					display: none;
+					}
+				#atc2:target {
+					display: block;
+					}
+				.a-table {
+					height: 1300px;
+					border-top: 4px solid gray;
+					border-bottom: 4px solid gray;
+					border-collapse: collapse;
+					border-style: inset;
+					border-spacing: 0px 10px;
+					word-break: break-all;
+					}
+				.a-table th {
+					font-size: 1.1em;
+					}
+				.table-top {
+					border-top: 1px dotted black;
+					}
+		/*▲아티클2 설정*/
+				#atc3 {
+					width: 100%;
+					position: relative;
+					position: absolute;
+					display: none;
+					}
+				#atc3:target {
+					display: block;
+					}
+				.comment {
+					width: 100%;
+					border: 1px solid gray;
+					border-radius: 10px;
+					background-color: rgba(0,0,0,0.1);
+					}
+				.comment h1 {
+					}
+				.comment div {
+					margin-top: 60px;
+					}
+				.comment div p {
+					font-size: 1.5em;
+					}
+				.comment>p {
+					margin-top: 50px;
+					font-size: 2em;
+					text-align: center;
+					}
+		/*▲아티클3 설정*/
+				.a-txt {
+					border: 1px solid gray;
+					border-radius: 10px;
+					background-color: gray;
+					}
+				.a-txt h3 {
+					font-size: 1.4em;
+					}
+				.a-txt p {
+					font-size: 1.1em;
+					}
+				.a-txt span {
+					font-size: 1.2em;
+					color: white;
+					}
+				#atc4 {
+					position: relative;
+					position: absolute;
+					display: none;
+					}
+				#atc4:target {
+					display: block;
+					}
+		/*▲아티클4 설정*/
+		/*▲섹션 설정*/
+				footer {
+					width: 100%;
+					height: 5%;
+					}
+				footer p:first-child {
+					text-align: center;
+					font-size: 1.5em;
+					}
+		/*▲푸터 설정*/
+		
+		
+				@media screen and (max-width: 768px) {
+					html,body {
+						height: 3300px;
+						}
+					#container {
+						width: 85%;
+						}
+					header {
+						height: 5%;
+						}
+					h1 {
+						font-size: 5vw;
+						margin-top: 40px;
+						}
+					nav {
+						height: 3%;
+						}
+					nav ul {
+						border: 2px solid gray;
+						}
+					nav ul li {
+						border: 0px;
+						}
+					aside {
+						height: 25%;
+						}
+					.t-box h3 {
+						position: relative;
+						top: -310px;
+						font-size: 5vw;
+						}
+					.t-box p {
+						position: relative;
+						top: -290px;
+						font-size: 3vw;
+						}
+					.m-txt {
+						top: -10px;
+						}
+					.m-txt p {
+						font-size: 4vw;
+						}
+					.m-txt h3 {
+						font-size: 2.5vw;
+						}
+					.s-txt {
+						top: 920px;
+						font-size: 2.3vw;
+						text-align: justify;
+						}
+					.g-txt {
+						top: 1190px;
+						font-size: 2.4vw;
+						}
+					.a-table {
+						height: 1100px;
+						}
+					}
+		/*▲768px이하 미디어 쿼리 설정*/
+		
+		
+					@media screen and (max-width: 470px) {
+						html,body {
+							height: 3700px;
+							}
+						#container {
+							width: 95%;
+							}
+						header {
+							height: 4%;
+							}
+						aside {
+							height: 20%;
+							}
+						section {
+							height: 70%;
+							}
+						}
+					@media screen and (max-width: 320px) {
+						html,body {
+							height: 4000px;
+							}
+						#container {
+							width: 95.5%;
+							}
+						header {
+							height: 4%;
+							}
+						aside {
+							height: 20%;
+							}
+						tr {
+							border-top: 1px dotted black;
+							}
+						}
+		/*▲320px이하 미디어 쿼리 설정*/
+			</style>
+		</head>
+		<body>
+			<div id="container">
+				<header id="top">
+					<h1>QLED 138 cm 스위블 벽걸이형</h1>
+				</header>
+<!-- 헤더 본문 -->
+				<nav>
+					<ul>
+						<li><a href="#atc1">제품 상세</a></li>
+						<li><a href="#atc2">상세 한 눈에 보기</a></li>
+						<li><a href="#atc3">상품평</a></li>
+						<li><a href="#atc4">구매 시 유의사항</a></li>
+					</ul>
+				</nav>
+<!-- 내비 본문 -->
+				<aside>
+					<div class="a-box">
+						<div id="right">
+							<a href="#left">
+								<img src="img/1right.jpg" alt="제품 왼쪽 45도">
+							</a>
+						</div>
+						<div id="left">
+							<a href="#upper">
+								<img src="img/2left.jpg" alt="제품 오른쪽 45도">
+							</a>
+						</div>
+						<div id="upper">
+							<a href="#side">
+							<img src="img/3upper.jpg" alt="제품 윗면">
+							</a>
+						</div>
+						<div id="side">
+							<a href="#front">
+								<img src="img/4side.jpg" alt="제품 옆면">
+							</a>
+						</div>
+						<div id="front">
+							<a href="#right">
+								<img src="img/front.jpg" alt="제품 정면">
+							</a>
+						</div>
+						
+						<div>
+							<p> ▲ 사진을 클릭하시면 다방면으로 보실 수 있습니다. <a href="#top"><b>사진을 보신 후에는 여기를 클릭해주세요.</b></a></p>
+						</div>
+					</div>
+				</aside>
+<!-- 어사이드 본문 -->
+				<hr>
+				<section>					
+					<article id="atc2">
+						<table width="100%" class="a-table">
+							<tr>
+								<th colspan="2">디스플레이</th>
+								<th>화면크기</th>
+								<td>138cm</td>
+								<th>해상도</th>
+								<td>3,840*2,160</td>
+								<th></th>
+								<td></td>
+							</tr>
+								
+							<tr  class="table-top">
+								<th colspan="2" rowspan="2">영상</th>
+								<th>화질엔진</th>
+								<td>Quantum Processor 4K</td>
+								<th>HDR</th>
+									<td>Quantum HDR</td>
+								<th>HDR 10+</th>
+								<td>인증</td>
+							</tr>
+							<tr>
+								<th>HLG</th>
+								<td>지원</td>
+								<th>명암비 강화 기술</th>
+								<td>있음</td>
+								<th>디밍 기술</th>
+								<td>Supreme UHD Dimming</td>
+							</tr>
+								
+							<tr  class="table-top">
+								<th colspan="2" rowspan="2">사운드</th>
+								<th>무빙 사운드 (OTS)</th>
+								<td>무빙 사운드 Lite</td>
+								<th>Q-Symphony</th>
+								<td>있음</td>
+								<th>사운드출력(RMS)</th>
+								<td>20W</td>
+							</tr>
+							<tr>
+								<th>돌비 사운드</th>
+								<td>있음</td>
+								<th>Dolby 5.1 Decoder</th>
+								<td>없음</td>
+								<th>블루투스 오디오</th>
+								<td>지원</td>
+							</tr>
+								
+							<tr  class="table-top">
+								<th colspan="2" rowspan="2">디자인</th>
+								<th>디자인</th>
+								<td>AirSlim</td>
+								<th>전면부 색상</th>
+								<td>BLACK</td>
+								<th>스탠드 타입</th>
+								<td>NARROW NECK PLATE</td>
+							</tr>
+							<tr>
+								<th>스탠드 컬러</th>
+								<td>SAND BLACK</td>
+								<th></th>
+								<td></td>
+								<th></th>
+								<td></td>
+							</tr>
+								
+							<tr  class="table-top">
+								<th colspan="2" rowspan="2">게임 기능</th>
+								<th>자동 게임 모드</th>
+								<td>있음</td>
+								<th>게임 모션 플러스</th>
+								<td>있음</td>
+								<th>서라운드 사운드</th>
+								<td>있음</td>
+							</tr>
+							<tr>
+								<th>울트라 와이드 뷰</th>
+								<td>있음</td>
+								<th>게임 바</th>
+								<td>있음</td>
+								<th></th>
+								<td></td>
+							</tr>
+								
+							<tr  class="table-top">
+								<th colspan="2" rowspan="4">기능</th>
+								<th>AI 업스케일링</th>
+								<td>있음</td>
+								<th>AI 화질 최적화</th>
+								<td>있음</td>
+								<th>AI 액티브 보이스 강화</th>
+								<td>있음</td>
+							</tr>
+							<tr>
+								<th>AI 사운드 최적화+</th>
+								<td>AI 사운드 최적화+</td>
+								<th>AI 스트리밍</th>
+								<td>없음</td>
+								<th>동작 감지 센서 (The Frame)</th>
+								<td>없음</td>
+							</tr>
+							<tr>
+								<th>블루투스 HID 지원</th>
+								<td>지원 </td>
+								<th>USB HID 지원</th>
+								<td>지원 </td>
+								<th>자막</th>
+								<td>있음</td>
+							</tr>
+							<tr>
+								<th>접근성 - 음성 안내 지원</th>
+								<td>미국 영어, 한국어</td>
+								<th>접근성 - 리모컨 음성 학습 / 메뉴 학습</th>
+								<td>미국 영어, 한국어</td>
+								<th>접근성 - 기타</th>
+								<td>포커스확대 / 고대비화면 / 소리다중출력 / SeeColors / 색상반전 / 흑백모드 / 자막이동하기 / 수어확대 설정 / 리모컨 버튼 반복 설정 / 자막분리 </td>
+							</tr>
+								
+							<tr  class="table-top">
+								<th colspan="2">크기</th>
+								<th>스탠드 제외 (가로x높이x깊이)(mm)</th>
+								<td>1232.9 x 709.2 x 25.7 mm</td>
+								<th>스탠드 포함 (가로x높이x깊이) (mm)</th>
+								<td>1232.9 x 774.6 x 246.5 mm</td>
+								<th>스탠드 기본 간격 (가로x깊이)</th>
+								<td>290 x 246.5 mm</td>
+							</tr>
+							<tr  class="table-top">
+								<th colspan="2">중량</th>
+								<th>스탠드 제외 (kg)</th>
+								<td>15.5 kg</td>
+								<th>스탠드 포함 (kg)</th>
+								<td>17.8 kg</td>
+								<th></th>
+								<td></td>
+							</tr>
+						</table>
+					</article>
+					<article id="atc3">
+						<form class="comment">
+							<h1>상품평</h1>
+							<div class="grad">
+								<p>1. 상품에 만족 하시나요?</p>
+								<label>
+									<input type="radio" name="grad" value="평점">1. 별 1개(★)
+								</label>
+								<label>
+									<input type="radio" name="grad" value="평점">2. 별 2개(★★)
+								</label>
+								<label>
+									<input type="radio" name="grad" value="평점">3. 별 3개(★★★)
+								</label>
+								<label>
+									<input type="radio" name="grad" value="평점">4. 별 4개(★★★★)
+								</label>
+								<label>
+									<input type="radio" name="grad" value="평점">5. 별 5개(★★★★★)
+								</label>
+							</div>
+							<div class="dis">
+								<p>2. 서비스에 불만족하신 부분을 선택해주세요.(중복 선택 가능)</p>
+								<label>
+									<input type="checkbox" name="dis1" value="product">제품
+								</label>
+								<label>
+									<input type="checkbox" name="dis2" value="call-service">콜센터 서비스
+								</label>
+								<label>
+									<input type="checkbox" name="dis3" value="homepage">홈페이지 구성
+								</label>
+								<label>
+									<input type="checkbox" name="dis4" value="delivery">배송
+								</label>
+								<label>
+									<input type="checkbox" name="dis5" value="promotion">프로모션
+								</label>
+								<br>
+								<label>
+									<input type="checkbox" name="dis5" value="etc">기타(기타사항을 적어주세요)
+									<input type="text">
+								</label>
+							</div>
+							<div>
+								<p>3. 제품에 대한 구매자님의 상품평을 남겨주세요.<p>
+								<textarea name="freetalk" cols="50" rows="10" placeholder="1,000자 이내로 의견을 자유롭게 적어주세요" maxlength="1000"></textarea>
+								<br>
+								<label>이미지 첨부<input type="file"></label>
+							</div>
+								<input type="submit" value="전송하기">
+								<input type="reset" value="다시 작성하기">
+								<p>상품평을 남겨주셔서 감사합니다.</p>
+								<p>구매자님의 의견을 수렴하여 보다 나은 서비스로 보답하겠습니다.</p>
+						</form>
+					</article>
+					<article id="atc4">
+						<div class="a-txt">
+							<h2>구매 시 유의사항</h2>
+							<h3>배송지역</h3>
+							<p>도서 산간지역은 배송이 제한될 수 있습니다.</p>
+							<br>
+							<h3>배송비</h3>
+							<p>전 상품 무료배송</p>
+							<p>(단, 제주도 등 일부 도서/산간 지역은 별도 배송비가 발생할 수 있으며, 설치상품의 경우 설치 환경 등에 따라 추가 설치비가 발생할 수 있습니다.)</p>
+							<br>
+							<h3>배송기간</h3>
+							<p>주문결제 후 평균 3일 이내 배송(일, 공휴일 제외) 단, 도서/산간지역은 배송일이 추가적으로 소요될 수 있으며, 상품 보유현황에 따라 배송일이 지연될 수 있습니다.</p>
+							<p>아래 상품군은 지정하신 희망 배송일에 상품을 배송 해 드리나 상품 보유현황 및 설치기사 상황에 따라 배송이 다소 지연될 수 있습니다.
+								<ul>
+									<li>희망 배송일 지정 가능 상품군: 전자레인지, 청소기, 자연가습청정기</li>
+									<li>희망 배송일 지정 및 설치 상품군: PC/모니터, 프린터, 오븐, 에어케어, 에어트랙, 무선도킹오디오, 블루레이/DVD플레이어</li>
+								</ul>
+							</p>
+							<p>또한 인수고객과의 통화불가, 수령지 주소가 불명확할 경우 배송이 지연될 수 있습니다.</p>
+							<br>
+							<h3>배송방법</h3>
+							<p>배송 당일 오전에 SMS로 배송예정을 알리는 문자를 발송해드리며, 고객 댁에 도착하기 전 배달설치 기사가 연락 드립니다. 스팸 처리 등으로 인해 문자를
+								받지 못하는 경우가 있으니 주문내역에서 배송 상황을 확인해주시기 바랍니다.삼성전자 배송 상품 중에는 고가의 프리미엄 상품들이 포함되어 있어 고객님께
+								직접 전달을 원칙으로 하고 있습니다. 안전한 배송을 위해 고객님이 주문 시 지정한 배송장소 외 제3자 전달이나 임의장소로의 배송은 제공하지 않습니다.
+								설치상품을 주문 시에는 설치환경을 꼭 체크하여 주십시오.
+								<ul>
+									<li>TV: 벽걸이 설치 시 설치 불가한 벽면 재질은 아닌지 확인하여 주십시오.</li>
+									<li>냉장고/세탁기 : 설치공간 사이즈, 출입문 사이즈, 제품 사이즈를 주문 전에 확인하여 주십시오.</li>
+									<li>TV 138 cm 이상, 양문형 냉장고, 비스포크 냉장고, 스탠드형 김치냉장고, 세탁기 7 kg 이상, 건조기, 에어드레서는 반드시 설치가 필요한 품목으로, 설치</li>
+								</ul>
+							</p>
+							<p>전문가가 직접 설치, 시운전 후 이상 여부를 점검하고 있습니다.</p>
+							<p>미설치 단순 수령이 불가한 제품이오니, 고객님의 사정으로 미설치 시 배송 보류 또는 반품될 수 있습니다.</p>
+							<br>
+							<h3>배송추적</h3>
+							<p><span>삼성닷컴 상단 '마이 삼성 -> 주문/배송조회 -> 주문정보'에서 배송상태 및 배달설치 기사 전화번호 조회가 가능합니다.<span></p>
+						</div>
+					</article>
+					<article id="atc1">
+						<div class="i-box">
+							<img src="img/samsung1.jpg" alt="상세 페이지1">
+						</div>
+						<div class="monitor">
+							<div class="m-txt">
+								<p>4K업스케일링 기술과 더해진 울트라 와이드 뷰</p>
+								<h3><span class="strong">4K업스케일링 기술</span>로 저해상도 영상을 4K 화질로,<br>게이밍 모니터에서 즐기던 울트라 와이드 비율을 이제는 QLED TV의 화면에서 누려보세요.</h3>
+							</div>
+						</div>
+						
+						<div class="t-box">
+							<h3>집에서 가족들과 함께 퀀텀 디스플레이 4K를 즐겨보세요</h3>
+							<p>● 독보적인 화질과 와이드뷰 ●</p>
+							<p>● 입체적인 사운드 ●</p>
+							<p>● 게임과 PC모드에도 적용되는 4K업스케일링 ●</p>
+						</div>
+						
+						<div class="sound">
+							<img src="img/sound.jpg" alt="sound 사진">
+							<div class="s-txt">
+								<p>홈 시네마를 완성하는 공간 맞춤 사운드+</p>
+								<h3>공간 맞춤 사운드 기술이 TV와 벽 사이의 거리, 소리 울림 정도를 분석해<br><span class="strong">가장 이상적인 사운드</span>를 구축해줍니다.</h3>
+							</div>
+							<div class="game">
+								<img src="img/game.jpg" alt="game 화질 사진">
+								<div class="g-txt">
+								<p>화면 끊김과 밀림 걱정 없이</p>
+								<h3>AMD FreeSync 프리미엄프로 기술로 화면의 밀림, 끊김 현상 걱정 없이 <span class="strong">HDR 화면을 그대로</span> 유지하여 부드럽게 게임을 즐길 수 있습니다.</h3>
+								</div>
+							</div>
+					</article>
+				</section>
+<!-- 섹션 본문 -->
+				<footer>
+					<p><a href="#top">▲메뉴로 돌아가기</a></p>
+					<hr>
+					<p>
+						<a href="https://www.samsung.com/sec/tvs/package-qa70-w1-d2c/KQ55QA70-W1/" target="_blank">제품 사이트</a>
+					</p>
+					<address>서울시 성동구 왕십리로 303 우체국 건물 4층 미래능력교육개발원</address>
+				</footer>
+			</div>
+		</body>
+
+</html>
