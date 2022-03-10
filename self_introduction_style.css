@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#container {
+    width: 780px;
+    height: 1120px;
+    border: 0.4px solid black;
+    margin: 0 auto;
+}
+#container h1 {
+    text-align: center;
+    margin-top: 5%;
+}
+.QnA {
+    width: 98%;
+    height: 81%;
+    margin: 0 auto;
+    margin-top: 5%;
+    padding: 1%;
+}
+.QnA div {
+    height: 20%;
+    text-align: justify;
+}
+.QnA div:not(.plan) {
+    margin-bottom: 1%;
+}
+.mine {
+    padding-top: 20px;
+}
+.growth {
+}
+.career {
+    padding-top: 45px;
+}
+.aptitude {
+    padding-top: 45px;
+}
+.plan {
+    padding-top: 30px;
+}
